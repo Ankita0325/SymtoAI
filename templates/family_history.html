@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family History - SwasthyaAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold">🏥</span>
+                    <span class="text-xl font-bold">SwasthyaAI</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="/" class="hover:text-blue-200">Home</a>
+                    <a href="/chat" class="hover:text-blue-200">Chat</a>
+                    <a href="/dashboard" class="hover:text-blue-200">Dashboard</a>
+                    <a href="/family-history" class="hover:text-blue-200">Family History</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-8">
+        <h1 class="text-3xl font-bold text-blue-600 mb-6">👨‍👩‍👧‍👦 Family Medical History</h1>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Add Family Member</h3>
+                <form id="family-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Relation</label>
+                        <select id="relation" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="father">Father</option>
+                            <option value="mother">Mother</option>
+                            <option value="grandfather">Grandfather</option>
+                            <option value="grandmother">Grandmother</option>
+                            <option value="sibling">Sibling</option>
+                            <option value="child">Child</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Medical Conditions</label>
+                        <select id="condition" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="diabetes">Diabetes</option>
+                            <option value="hypertension">Hypertension</option>
+                            <option value="heart_disease">Heart Disease</option>
+                            <option value="cancer">Cancer</option>
+                            <option value="asthma">Asthma</option>
+                            <option value="arthritis">Arthritis</option>
+                            <option value="depression">Depression</option>
+                            <option value="stroke">Stroke</option>
+                            <option value="kidney_disease">Kidney Disease</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                        Add Family History
+                    </button>
+                </form>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Family History Records</h3>
+                <div id="family-records" class="space-y-3">
+                    <p class="text-gray-500">No family history records added yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/family.js') }}"></script>
+</body>
+</html>

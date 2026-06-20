@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwasthyaAI - Health Screening Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold">🏥</span>
+                    <span class="text-xl font-bold">SwasthyaAI</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="/" class="hover:text-blue-200">Home</a>
+                    <a href="/chat" class="hover:text-blue-200">Chat</a>
+                    <a href="/dashboard" class="hover:text-blue-200">Dashboard</a>
+                    <a href="/family-history" class="hover:text-blue-200">Family History</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-blue-600 mb-4">Welcome to SwasthyaAI</h1>
+                <p class="text-xl text-gray-600">Your AI-Powered Health Screening Assistant</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h3 class="text-xl font-semibold mb-2">AI Health Chatbot</h3>
+                    <p class="text-gray-600">Describe your symptoms naturally and get intelligent responses</p>
+                    <a href="/chat" class="inline-block mt-3 text-blue-600 hover:text-blue-800">Start Chatting →</a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
+                    <div class="text-3xl mb-3">📊</div>
+                    <h3 class="text-xl font-semibold mb-2">Risk Assessment</h3>
+                    <p class="text-gray-600">Get personalized risk analysis based on your symptoms and history</p>
+                    <a href="/dashboard" class="inline-block mt-3 text-blue-600 hover:text-blue-800">View Dashboard →</a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500">
+                    <div class="text-3xl mb-3">👨‍👩‍👧‍👦</div>
+                    <h3 class="text-xl font-semibold mb-2">Family History</h3>
+                    <p class="text-gray-600">Track family medical history for better risk assessment</p>
+                    <a href="/family-history" class="inline-block mt-3 text-blue-600 hover:text-blue-800">Add History →</a>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold mb-4 text-blue-800">How It Works</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-blue-600 font-bold">1.</span>
+                        <span>Describe your symptoms to the AI chatbot</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-blue-600 font-bold">2.</span>
+                        <span>Answer dynamic follow-up questions</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-blue-600 font-bold">3.</span>
+                        <span>Add your family medical history</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-blue-600 font-bold">4.</span>
+                        <span>Receive personalized risk assessment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2026 SwasthyaAI - Health Screening Assistant</p>
+            <p class="text-sm text-gray-400 mt-2">⚠️ This tool does not provide medical diagnosis. Always consult a healthcare professional.</p>
+        </div>
+    </footer>
+</body>
+</html>

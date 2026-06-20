@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - SwasthyaAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold">🏥</span>
+                    <span class="text-xl font-bold">SwasthyaAI</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="/" class="hover:text-blue-200">Home</a>
+                    <a href="/chat" class="hover:text-blue-200">Chat</a>
+                    <a href="/dashboard" class="hover:text-blue-200">Dashboard</a>
+                    <a href="/family-history" class="hover:text-blue-200">Family History</a>
+                    <a href="/reports" class="hover:text-blue-200">Reports</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-8">
+        <h1 class="text-3xl font-bold text-blue-600 mb-6">📋 Health Reports</h1>
+        <div id="reports-container" class="space-y-4">
+            <p class="text-gray-500">Loading reports...</p>
+        </div>
+    </div>
+
+    <script>
+        const sessionId = localStorage.getItem('swasthya_session_id') || 'user_' + Date.now();
+        
+        async function loadReports() {
+            try {
+                const response = await fetch(`/api/reports/${sessionId}`);
+                const reports = await response.json();
+                
+                const container = document.getElementById('reports-container');
+                if (reports.length === 0) {
+                    container.innerHTML = `
+                        <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                            <p class="text-gray-500">No reports found.</p>
+                            <p class="text-gray-400 text-sm mt-2">Start a chat and click "Get Diagnosis" to generate a report.</p>
+                            <a href="/chat" class="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                                Go to Chat
+                            </a>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = reports.map((report, index) => `
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-700">Report #${reports.length - index}</h3>
+                                <p class="text-sm text-gray-500">${new Date(report.date).toLocaleString()}</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-sm font-semibold 
+                                ${report.risk_level === 'High' ? 'bg-red-100 text-red-800' : 
+                                  report.risk_level === 'Moderate' ? 'bg-yellow-100 text-yellow-800' : 
+                                  'bg-green-100 text-green-800'}">
+                                ${report.risk_level} Risk
+                            </span>
+                        </div>
+                        
+                        <div class="mt-4 grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-600">Risk Score</h4>
+                                <p class="text-2xl font-bold ${report.risk_score >= 70 ? 'text-red-600' : report.risk_score >= 40 ? 'text-yellow-600' : 'text-green-600'}">
+                                    ${report.risk_score}/100
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-600">Symptoms</h4>
+                                <p class="text-sm text-gray-600">${report.symptoms?.length || 0} symptoms recorded</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <h4 class="font-semibold text-gray-600">Recommendations</h4>
+                            <p class="text-sm text-gray-700">${report.recommendations?.substring(0, 150) || 'No recommendations'}</p>
+                        </div>
+                        
+                        <button onclick="viewFullReport('${report.report_id}')" 
+                                class="mt-4 text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Full Report →
+                        </button>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                document.getElementById('reports-container').innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-red-500">Error loading reports. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function viewFullReport(reportId) {
+            alert('Full report view coming soon!');
+        }
+        
+        loadReports();
+    </script>
+</body>
+</html>
