@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import json
 import os
 from datetime import datetime
+import hashlib
+import secrets
 from services.symptom_parser import SymptomParser
 from services.risk_engine import RiskEngine
 from services.groq_service import GroqService
@@ -9,7 +11,7 @@ from services.question_generator import QuestionGenerator
 from utils.helpers import load_json, save_json
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-here'
+app.secret_key = 'your-secret-key-here'  # Change this in production
 
 # Initialize services
 symptom_parser = SymptomParser()
@@ -18,6 +20,7 @@ groq_service = GroqService()
 question_generator = QuestionGenerator()
 
 # Data file paths
+USERS_FILE = 'data/users.json'
 FAMILY_HISTORY_FILE = 'data/family_history.json'
 REPORTS_FILE = 'data/reports.json'
 SYMPTOMS_FILE = 'data/symptoms.json'
@@ -26,7 +29,7 @@ PATIENTS_FILE = 'data/patients.json'
 
 # Initialize data files
 os.makedirs('data', exist_ok=True)
-for file in [FAMILY_HISTORY_FILE, REPORTS_FILE, SYMPTOMS_FILE, CONVERSATIONS_FILE, PATIENTS_FILE]:
+for file in [USERS_FILE, FAMILY_HISTORY_FILE, REPORTS_FILE, SYMPTOMS_FILE, CONVERSATIONS_FILE, PATIENTS_FILE]:
     if not os.path.exists(file):
         with open(file, 'w') as f:
             json.dump({}, f)
@@ -34,32 +37,208 @@ for file in [FAMILY_HISTORY_FILE, REPORTS_FILE, SYMPTOMS_FILE, CONVERSATIONS_FIL
 # Store conversation history in memory
 conversation_history = {}
 
+# ============================================================
+# AUTHENTICATION ROUTES (NEW - No existing features affected)
+# ============================================================
+
+@app.route('/login')
+def login_page():
+    """Login page"""
+    return render_template('login.html')
+
+@app.route('/signup')
+def signup_page():
+    """Signup page"""
+    return render_template('signup.html')
+
+@app.route('/logout')
+def logout():
+    """Logout user"""
+    session.clear()
+    return redirect(url_for('login_page'))
+
+@app.route('/api/auth/signup', methods=['POST'])
+def signup():
+    """User registration API"""
+    data = request.json
+    username = data.get('username', '').strip()
+    email = data.get('email', '').strip()
+    password = data.get('password', '')
+    
+    # Validation
+    if not username or len(username) < 3:
+        return jsonify({'success': False, 'message': 'Username must be at least 3 characters'}), 400
+    
+    if not email or '@' not in email:
+        return jsonify({'success': False, 'message': 'Valid email is required'}), 400
+    
+    if not password or len(password) < 6:
+        return jsonify({'success': False, 'message': 'Password must be at least 6 characters'}), 400
+    
+    # Check if user exists
+    users = load_json(USERS_FILE)
+    
+    if username in users:
+        return jsonify({'success': False, 'message': 'Username already exists'}), 400
+    
+    for user_id, user_data in users.items():
+        if user_data.get('email') == email:
+            return jsonify({'success': False, 'message': 'Email already registered'}), 400
+    
+    # Hash password
+    salt = secrets.token_hex(16)
+    password_hash = hashlib.sha256((password + salt).encode()).hexdigest()
+    
+    # Create user
+    user_id = f"user_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    users[user_id] = {
+        'username': username,
+        'email': email,
+        'password_hash': password_hash,
+        'salt': salt,
+        'created_at': datetime.now().isoformat(),
+        'last_login': None,
+        'user_id': user_id
+    }
+    
+    save_json(USERS_FILE, users)
+    
+    return jsonify({
+        'success': True,
+        'message': 'Account created successfully! Please login.',
+        'user_id': user_id
+    })
+
+@app.route('/api/auth/login', methods=['POST'])
+def login():
+    """User login API"""
+    data = request.json
+    username = data.get('username', '').strip()
+    password = data.get('password', '')
+    
+    if not username or not password:
+        return jsonify({'success': False, 'message': 'Username and password required'}), 400
+    
+    users = load_json(USERS_FILE)
+    
+    # Find user by username
+    user = None
+    user_id = None
+    for uid, u in users.items():
+        if u.get('username') == username:
+            user = u
+            user_id = uid
+            break
+    
+    if not user:
+        return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
+    
+    # Verify password
+    salt = user.get('salt')
+    password_hash = hashlib.sha256((password + salt).encode()).hexdigest()
+    
+    if password_hash != user.get('password_hash'):
+        return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
+    
+    # Update last login
+    user['last_login'] = datetime.now().isoformat()
+    users[user_id] = user
+    save_json(USERS_FILE, users)
+    
+    # Set session
+    session['user_id'] = user_id
+    session['username'] = username
+    session['logged_in'] = True
+    
+    return jsonify({
+        'success': True,
+        'message': 'Login successful!',
+        'user_id': user_id,
+        'username': username,
+        'redirect': '/chat'
+    })
+
+@app.route('/api/auth/check', methods=['GET'])
+def check_auth():
+    """Check if user is logged in"""
+    if session.get('logged_in'):
+        return jsonify({
+            'logged_in': True,
+            'user_id': session.get('user_id'),
+            'username': session.get('username')
+        })
+    return jsonify({'logged_in': False})
+
+@app.route('/api/auth/user/<user_id>', methods=['GET'])
+def get_user(user_id):
+    """Get user details"""
+    users = load_json(USERS_FILE)
+    user = users.get(user_id)
+    
+    if not user:
+        return jsonify({'error': 'User not found'}), 404
+    
+    return jsonify({
+        'user_id': user_id,
+        'username': user.get('username'),
+        'email': user.get('email'),
+        'created_at': user.get('created_at'),
+        'last_login': user.get('last_login')
+    })
+
+# ============================================================
+# PROTECTED ROUTES (Require login - added authentication check)
+# ============================================================
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    """Home page - redirects to login if not authenticated"""
+    if not session.get('logged_in'):
+        return redirect(url_for('login_page'))
+    return render_template('index.html', username=session.get('username'))
 
 @app.route('/chat')
 def chat():
-    return render_template('chat.html')
+    """Chat page - requires login"""
+    if not session.get('logged_in'):
+        return redirect(url_for('login_page'))
+    return render_template('chat.html', username=session.get('username'))
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    """Dashboard page - requires login"""
+    if not session.get('logged_in'):
+        return redirect(url_for('login_page'))
+    return render_template('dashboard.html', username=session.get('username'))
 
 @app.route('/family-history')
 def family_history():
-    return render_template('family_history.html')
+    """Family History page - requires login"""
+    if not session.get('logged_in'):
+        return redirect(url_for('login_page'))
+    return render_template('family_history.html', username=session.get('username'))
 
 @app.route('/reports')
 def reports():
-    return render_template('reports.html')
+    """Reports page - requires login"""
+    if not session.get('logged_in'):
+        return redirect(url_for('login_page'))
+    return render_template('reports.html', username=session.get('username'))
+
+# ============================================================
+# API ROUTES (Added authentication check - existing functionality preserved)
+# ============================================================
 
 @app.route('/api/chat', methods=['POST'])
 def handle_chat():
-    """Handle chat messages with full context"""
+    """Handle chat messages with full context - Requires login"""
+    # Check authentication
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     data = request.json
     user_message = data.get('message', '')
-    session_id = data.get('session_id', 'default')
+    session_id = data.get('session_id', session.get('user_id', 'default'))
     
     # Initialize conversation history for this session
     if session_id not in conversation_history:
@@ -138,9 +317,13 @@ def handle_chat():
 
 @app.route('/api/diagnose', methods=['POST'])
 def diagnose():
-    """Get final diagnosis based on all collected data"""
+    """Get final diagnosis based on all collected data - Requires login"""
+    # Check authentication
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     data = request.json
-    session_id = data.get('session_id', 'default')
+    session_id = data.get('session_id', session.get('user_id', 'default'))
     
     # Get all conversation history
     all_conversations = load_json(CONVERSATIONS_FILE)
@@ -205,7 +388,11 @@ def diagnose():
 
 @app.route('/api/dashboard/<session_id>', methods=['GET'])
 def get_dashboard_data(session_id):
-    """Get all dashboard data for a patient"""
+    """Get all dashboard data for a patient - Requires login"""
+    # Check authentication
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     # Get patient data
     all_patients = load_json(PATIENTS_FILE)
     patient_data = all_patients.get(session_id, {})
@@ -239,19 +426,29 @@ def get_dashboard_data(session_id):
 
 @app.route('/api/patient/<session_id>', methods=['GET'])
 def get_patient_data(session_id):
-    """Get complete patient data"""
+    """Get complete patient data - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     all_patients = load_json(PATIENTS_FILE)
     return jsonify(all_patients.get(session_id, {}))
 
 @app.route('/api/patients', methods=['GET'])
 def get_all_patients():
-    """Get all patients"""
+    """Get all patients - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     return jsonify(load_json(PATIENTS_FILE))
 
 @app.route('/api/family-history', methods=['POST'])
 def save_family_history():
+    """Save family medical history - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     data = request.json
-    session_id = data.get('session_id', 'default')
+    session_id = data.get('session_id', session.get('user_id', 'default'))
     family_data = data.get('family_data', {})
     
     all_data = load_json(FAMILY_HISTORY_FILE)
@@ -273,21 +470,37 @@ def save_family_history():
 
 @app.route('/api/family-history/<session_id>', methods=['GET'])
 def get_family_history(session_id):
+    """Get family medical history - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     all_data = load_json(FAMILY_HISTORY_FILE)
     return jsonify(all_data.get(session_id, {}))
 
 @app.route('/api/symptoms/<session_id>', methods=['GET'])
 def get_symptom_timeline(session_id):
+    """Get symptom timeline - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     all_data = load_json(SYMPTOMS_FILE)
     return jsonify(all_data.get(session_id, []))
 
 @app.route('/api/conversation/<session_id>', methods=['GET'])
 def get_conversation(session_id):
+    """Get conversation history - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     all_data = load_json(CONVERSATIONS_FILE)
     return jsonify(all_data.get(session_id, []))
 
 @app.route('/api/reports/<session_id>', methods=['GET'])
 def get_reports(session_id):
+    """Get patient reports - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     all_data = load_json(REPORTS_FILE)
     patient_reports = []
     for report_id, report in all_data.items():
@@ -298,14 +511,22 @@ def get_reports(session_id):
 
 @app.route('/api/chat/reset', methods=['POST'])
 def reset_conversation():
+    """Reset conversation - Requires login"""
+    if not session.get('logged_in'):
+        return jsonify({'error': 'Unauthorized. Please login first.'}), 401
+    
     data = request.json
-    session_id = data.get('session_id', 'default')
+    session_id = data.get('session_id', session.get('user_id', 'default'))
     
     if session_id in conversation_history:
         conversation_history[session_id] = []
         save_conversation(session_id, [])
     
     return jsonify({'status': 'success', 'message': 'Conversation reset'})
+
+# ============================================================
+# HELPER FUNCTIONS (UNCHANGED)
+# ============================================================
 
 def extract_family_history_from_message(message):
     """Extract family history from user message"""

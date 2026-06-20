@@ -15,11 +15,14 @@
                     <span class="text-2xl font-bold">🏥</span>
                     <span class="text-xl font-bold">SwasthyaAI</span>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 items-center">
                     <a href="/" class="hover:text-blue-200">Home</a>
                     <a href="/chat" class="hover:text-blue-200">Chat</a>
                     <a href="/dashboard" class="hover:text-blue-200">Dashboard</a>
                     <a href="/family-history" class="hover:text-blue-200">Family History</a>
+                    <a href="/reports" class="hover:text-blue-200">Reports</a>
+                    <span class="text-sm text-blue-200">👤 {{ username if username else 'User' }}</span>
+                    <a href="/logout" class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-sm transition">Logout</a>
                 </div>
             </div>
         </div>
@@ -30,28 +33,29 @@
             <div class="text-center mb-12">
                 <h1 class="text-5xl font-bold text-blue-600 mb-4">Welcome to SwasthyaAI</h1>
                 <p class="text-xl text-gray-600">Your AI-Powered Health Screening Assistant</p>
+                <p class="text-sm text-gray-500 mt-2">Logged in as: <strong>{{ username if username else 'Guest' }}</strong></p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500 hover:shadow-lg transition">
                     <div class="text-3xl mb-3">🤖</div>
                     <h3 class="text-xl font-semibold mb-2">AI Health Chatbot</h3>
                     <p class="text-gray-600">Describe your symptoms naturally and get intelligent responses</p>
-                    <a href="/chat" class="inline-block mt-3 text-blue-600 hover:text-blue-800">Start Chatting →</a>
+                    <a href="/chat" class="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium">Start Chatting →</a>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500 hover:shadow-lg transition">
                     <div class="text-3xl mb-3">📊</div>
                     <h3 class="text-xl font-semibold mb-2">Risk Assessment</h3>
                     <p class="text-gray-600">Get personalized risk analysis based on your symptoms and history</p>
-                    <a href="/dashboard" class="inline-block mt-3 text-blue-600 hover:text-blue-800">View Dashboard →</a>
+                    <a href="/dashboard" class="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium">View Dashboard →</a>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500 hover:shadow-lg transition">
                     <div class="text-3xl mb-3">👨‍👩‍👧‍👦</div>
                     <h3 class="text-xl font-semibold mb-2">Family History</h3>
                     <p class="text-gray-600">Track family medical history for better risk assessment</p>
-                    <a href="/family-history" class="inline-block mt-3 text-blue-600 hover:text-blue-800">Add History →</a>
+                    <a href="/family-history" class="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium">Add History →</a>
                 </div>
             </div>
 
