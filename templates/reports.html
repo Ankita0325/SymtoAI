@@ -207,6 +207,14 @@
     </div>
 
     <script>
+        // Align localStorage session ID with the logged-in user account
+        const loggedInUserId = "{{ user_id }}";
+        if (loggedInUserId) {
+            localStorage.setItem('swasthya_user_id', loggedInUserId);
+            localStorage.setItem('swasthya_session_id', loggedInUserId);
+        }
+    </script>
+    <script>
         const sessionId = localStorage.getItem('swasthya_session_id') || 'user_' + Date.now();
         
         async function loadReports() {
@@ -292,7 +300,7 @@
         }
         
         function viewFullReport(reportId) {
-            alert('Full report view coming soon!');
+            window.location.href = `/report/view/${reportId}`;
         }
         
         loadReports();

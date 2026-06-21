@@ -322,6 +322,14 @@
         </div>
     </div>
 
+    <script>
+        // Align localStorage session ID with the logged-in user account
+        const loggedInUserId = "{{ user_id }}";
+        if (loggedInUserId) {
+            localStorage.setItem('swasthya_user_id', loggedInUserId);
+            localStorage.setItem('swasthya_session_id', loggedInUserId);
+        }
+    </script>
     <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
     <script>
         document.querySelectorAll('.nav-links a').forEach(function(link) {
