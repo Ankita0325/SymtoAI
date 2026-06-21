@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Report - SwasthyaAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; }
+        .section-header { font-weight: 700; font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px; color: #1a56db; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; }
+        .bullet-item { padding: 4px 0; color: #374151; line-height: 1.6; }
+        .risk-high { color: #dc2626; font-weight: 700; }
+        .risk-moderate { color: #f59e0b; font-weight: 700; }
+        .risk-low { color: #10b981; font-weight: 700; }
+        .patient-card { background: linear-gradient(135deg, #1a56db 0%, #3b82f6 100%); color: white; }
+        @media print {
+            body { background: white; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <div class="text-5xl mb-2">🏥</div>
+            <h1 class="text-3xl font-bold text-blue-600">SwasthyaAI</h1>
+            <p class="text-gray-500 text-sm">Health Assessment Report</p>
+        </div>
+
+        <!-- Patient Information Card -->
+        <div class="patient-card rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-blue-200 text-xs">Patient ID</p>
+                    <p class="font-mono text-sm">{{ report_data.patient_id if report_data.patient_id else 'N/A' }}</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-blue-200 text-xs">Report ID</p>
+                    <p class="font-mono text-sm">{{ report_data.report_id if report_data.report_id else 'N/A' }}</p>
+                </div>
+            </div>
+            <div class="mt-4">
+                <h2 class="text-2xl font-bold">{{ report_data.patient_name if report_data.patient_name else 'Unknown' }}</h2>
+                <p class="text-blue-200">{{ report_data.patient_email if report_data.patient_email else 'N/A' }}</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>
+                    <p class="text-blue-200 text-xs">Report Date</p>
+                    <p class="text-sm">{{ report_data.report_date.split('T')[0] if report_data.report_date else 'N/A' }}</p>
+                </div>
+                <div>
+                    <p class="text-blue-200 text-xs">Risk Level</p>
+                    <p class="text-lg font-bold 
+                        {% if report_data.risk_level == 'High' %}risk-high{% elif report_data.risk_level == 'Moderate' %}risk-moderate{% else %}risk-low{% endif %}"
+                        style="color: white;">
+                        {{ report_data.risk_level if report_data.risk_level else 'N/A' }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Score -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-semibold text-gray-700">📊 Risk Score</h3>
+                <span class="text-3xl font-bold 
+                    {% if report_data.risk_score >= 70 %}text-red-600{% elif report_data.risk_score >= 40 %}text-yellow-600{% else %}text-green-600{% endif %}">
+                    {{ report_data.risk_score if report_data.risk_score else 0 }}/100
+                </span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3 mt-2">
+                <div class="h-3 rounded-full transition-all duration-500 
+                    {% if report_data.risk_score >= 70 %}bg-red-600{% elif report_data.risk_score >= 40 %}bg-yellow-600{% else %}bg-green-600{% endif %}"
+                    style="width: {{ report_data.risk_score if report_data.risk_score else 0 }}%">
+                </div>
+            </div>
+            {% if report_data.risk_factors %}
+            <div class="mt-3">
+                <p class="text-sm text-gray-600">Risk Factors:</p>
+                <ul class="text-sm text-gray-700 list-disc pl-5">
+                    {% for factor in report_data.risk_factors %}
+                        <li>{{ factor }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Symptoms -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="section-header">📋 Symptoms Summary</h3>
+            {% if report_data.symptoms %}
+                {% for symptom in report_data.symptoms %}
+                    <div class="bullet-item">• {{ symptom.message }}</div>
+                {% endfor %}
+            {% else %}
+                <p class="text-gray-500">No symptoms recorded.</p>
+            {% endif %}
+        </div>
+
+        <!-- Family History -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="section-header">👨‍👩‍👧‍👦 Family History</h3>
+            {% if report_data.family_history %}
+                {% for relation, conditions in report_data.family_history.items() %}
+                    <div class="bullet-item">• <span class="font-semibold capitalize">{{ relation }}:</span> {{ conditions|join(', ')|replace('_', ' ') }}</div>
+                {% endfor %}
+            {% else %}
+                <p class="text-gray-500">No family history recorded.</p>
+            {% endif %}
+        </div>
+
+        <!-- Possible Conditions -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="section-header">🏥 Possible Conditions</h3>
+            {% if report_data.conditions %}
+                {% for condition in report_data.conditions %}
+                    <div class="bullet-item">• {{ condition }}</div>
+                {% endfor %}
+            {% else %}
+                <p class="text-gray-500">No conditions identified.</p>
+            {% endif %}
+        </div>
+
+        <!-- Recommendations -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="section-header">💊 Recommendations</h3>
+            {% if report_data.recommendations %}
+                {% for rec in report_data.recommendations.split('\n') %}
+                    {% if rec.strip() %}
+                        <div class="bullet-item">• {{ rec.strip() }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p class="text-gray-500">No recommendations available.</p>
+            {% endif %}
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-8 pt-4 border-t border-gray-200">
+            <p class="text-xs text-gray-400">Generated by SwasthyaAI Health Screening Assistant</p>
+            <p class="text-xs text-gray-400 mt-1">⚠️ This is not a medical diagnosis. Consult a healthcare professional.</p>
+            <div class="mt-4 no-print">
+                <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    🖨️ Print Report
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

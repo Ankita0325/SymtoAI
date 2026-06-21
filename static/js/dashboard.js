@@ -15,7 +15,6 @@ console.log('📊 Dashboard Session ID:', sessionId);
 document.addEventListener('DOMContentLoaded', function() {
     loadAllDashboardData();
     
-    // Setup refresh button
     const refreshBtn = document.getElementById('refresh-dashboard');
     if (refreshBtn) {
         refreshBtn.addEventListener('click', function() {
@@ -32,7 +31,6 @@ async function loadAllDashboardData() {
     console.log('🔄 Loading all dashboard data...');
     
     try {
-        // Load from the new dashboard API
         const response = await fetch(`/api/dashboard/${sessionId}`);
         
         if (!response.ok) {
@@ -42,7 +40,6 @@ async function loadAllDashboardData() {
         const data = await response.json();
         console.log('📊 Dashboard data received:', data);
         
-        // Update all sections
         updatePatientInfo(data);
         updateRiskAssessment(data);
         updateSymptoms(data);
@@ -50,7 +47,6 @@ async function loadAllDashboardData() {
         updateDiagnosis(data);
         updateRiskFactors(data);
         
-        // Show data status
         if (data.has_data) {
             console.log('✅ Dashboard data loaded successfully');
         } else {
@@ -65,7 +61,7 @@ async function loadAllDashboardData() {
 }
 
 // ============================================================
-// UPDATE FUNCTIONS - Each section is dynamic
+// UPDATE FUNCTIONS
 // ============================================================
 
 function updatePatientInfo(data) {
@@ -99,20 +95,17 @@ function updateRiskAssessment(data) {
     const report = data.latest_report;
     
     if (report) {
-        // Risk Level
         const level = report.risk_level || 'Not Assessed';
         if (riskLevel) {
             riskLevel.textContent = level;
             riskLevel.className = `text-3xl font-bold mt-2 risk-${level.toLowerCase()}`;
         }
         
-        // Risk Score
         const score = report.risk_score || 0;
         if (riskScore) {
             riskScore.textContent = score + '/100';
         }
         
-        // Progress Bar
         if (progressFill) {
             progressFill.style.width = `${Math.min(score, 100)}%`;
             if (score >= 70) {
@@ -124,7 +117,6 @@ function updateRiskAssessment(data) {
             }
         }
         
-        // Recommendations
         if (recommendations) {
             if (report.recommendations) {
                 recommendations.innerHTML = report.recommendations.replace(/\n/g, '<br>');
@@ -133,7 +125,6 @@ function updateRiskAssessment(data) {
             }
         }
     } else {
-        // No data - show empty state
         if (riskLevel) riskLevel.textContent = 'Not Assessed';
         if (riskScore) riskScore.textContent = '-';
         if (recommendations) recommendations.textContent = 'No recommendations yet. Get a diagnosis from the chat.';
@@ -152,7 +143,6 @@ function updateSymptoms(data) {
         return;
     }
     
-    // Get latest symptoms
     const latest = symptomsData[symptomsData.length - 1];
     const symptoms = latest.symptoms || {};
     
@@ -160,7 +150,6 @@ function updateSymptoms(data) {
     const excludeKeys = ['duration', 'duration_unit'];
     let hasSymptoms = false;
     
-    // Display each symptom as a tag
     for (const [symptom, present] of Object.entries(symptoms)) {
         if (!excludeKeys.includes(symptom) && present) {
             hasSymptoms = true;
@@ -171,7 +160,6 @@ function updateSymptoms(data) {
         }
     }
     
-    // Display duration if available
     if (symptoms.duration) {
         const durationTag = document.createElement('span');
         durationTag.className = 'symptom-tag bg-yellow-100 text-yellow-800';
@@ -214,6 +202,10 @@ function updateFamilyHistory(data) {
     container.innerHTML = html;
 }
 
+// ============================================================
+// DIAGNOSIS - SINGLE BUTTONS ONLY (FIXED)
+// ============================================================
+
 function updateDiagnosis(data) {
     const container = document.getElementById('diagnosis-display');
     if (!container) return;
@@ -230,11 +222,17 @@ function updateDiagnosis(data) {
         return;
     }
     
-    // Build dynamic diagnosis display
+    const reportId = report.report_id || 'report_' + Date.now();
+    
     let html = `
         <div class="bg-gray-50 p-4 rounded-lg">
+            <div class="flex justify-between items-start mb-4 flex-wrap gap-2">
+                <h4 class="font-semibold text-gray-700">📊 Diagnosis Summary</h4>
+                <span class="text-xs text-gray-400">#${reportId}</span>
+            </div>
+            
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">📊 Symptoms Summary</h4>
+                <h4 class="font-semibold text-gray-700">📊 Symptoms</h4>
                 ${report.symptoms && report.symptoms.length > 0 
                     ? report.symptoms.map(s => `<div class="bullet-item">• ${s.message}</div>`).join('')
                     : '<p class="text-gray-500">No symptoms recorded.</p>'
@@ -252,7 +250,7 @@ function updateDiagnosis(data) {
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">🏥 Possible Conditions</h4>
+                <h4 class="font-semibold text-gray-700">🏥 Conditions</h4>
                 ${report.diagnosis && report.diagnosis.conditions && report.diagnosis.conditions.length > 0
                     ? report.diagnosis.conditions.map((c, i) => 
                         `<div class="numbered-item"><span class="number">${i+1}.</span> ${c}</div>`
@@ -262,13 +260,12 @@ function updateDiagnosis(data) {
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">📊 Risk Assessment</h4>
+                <h4 class="font-semibold text-gray-700">📊 Risk</h4>
                 <div class="bullet-item">• Risk Level: <span class="font-bold ${report.risk_level === 'High' ? 'text-red-600' : report.risk_level === 'Moderate' ? 'text-yellow-600' : 'text-green-600'}">${report.risk_level}</span></div>
                 <div class="bullet-item">• Risk Score: ${report.risk_score}/100</div>
-                <div class="bullet-item">• Risk Factors:</div>
                 ${report.risk_factors && report.risk_factors.length > 0
                     ? report.risk_factors.map(f => `<div class="bullet-item" style="padding-left:24px;">- ${f}</div>`).join('')
-                    : '<div class="bullet-item" style="padding-left:24px;">No specific risk factors</div>'
+                    : ''
                 }
             </div>
             
@@ -282,11 +279,19 @@ function updateDiagnosis(data) {
                 }
             </div>
             
-            <div>
-                <h4 class="font-semibold text-gray-700">📋 Next Steps</h4>
-                <div class="bullet-item">• Schedule a doctor consultation</div>
-                <div class="bullet-item">• Monitor your symptoms daily</div>
-                <div class="bullet-item">• Keep this report for your records</div>
+            <!-- BUTTONS - ONLY ONCE AT THE BOTTOM -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="generateQRCode('${reportId}')" 
+                            class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm">
+                        📱 Generate QR Code
+                    </button>
+                    <button onclick="window.print()" 
+                            class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm">
+                        🖨️ Print Report
+                    </button>
+                </div>
+                <p class="text-xs text-gray-400 mt-2">QR Code contains patient details and full health report</p>
             </div>
         </div>
     `;
@@ -341,6 +346,143 @@ function showErrorState() {
 }
 
 // ============================================================
+// QR CODE FUNCTIONS (FIXED)
+// ============================================================
+
+async function generateQRCode(reportId) {
+    try {
+        console.log('📱 Generating QR code for report:', reportId);
+        showNotification('📱 Generating QR code...', 'info');
+        
+        const response = await fetch(`/api/report/${reportId}/qr`);
+        console.log('📥 QR API Response status:', response.status);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('📊 QR Data received:', data);
+        
+        if (data.qr_code) {
+            displayPatientQRCode(data);
+        } else {
+            showNotification('❌ Failed to generate QR code - no data', 'error');
+        }
+    } catch (error) {
+        console.error('❌ Error generating QR code:', error);
+        showNotification('❌ Error generating QR code: ' + error.message, 'error');
+    }
+}
+
+function displayPatientQRCode(data) {
+    const modal = document.createElement('div');
+    modal.id = 'qr-modal';
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    modal.innerHTML = `
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800">📱 Patient QR Code</h3>
+                <button onclick="closeQRModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    ✕
+                </button>
+            </div>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-xs text-gray-500">Patient</p>
+                        <p class="font-bold text-gray-800">${data.patient_name || 'Unknown'}</p>
+                        <p class="text-sm text-gray-600">${data.patient_email || 'N/A'}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-gray-500">Risk Level</p>
+                        <span class="font-bold ${data.risk_level === 'High' ? 'text-red-600' : data.risk_level === 'Moderate' ? 'text-yellow-600' : 'text-green-600'}">
+                            ${data.risk_level || 'N/A'}
+                        </span>
+                        <p class="text-sm text-gray-600">Score: ${data.risk_score || 0}/100</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-sm text-gray-600 mb-4">Scan this QR code to view full report</p>
+                <div class="bg-white p-4 rounded-lg inline-block border-2 border-gray-200">
+                    <img src="data:image/png;base64,${data.qr_code}" 
+                         alt="QR Code" 
+                         class="w-56 h-56 mx-auto">
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                    <a href="/api/report/${data.report_id}/qr/download" 
+                       class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">
+                        ⬇️ Download QR
+                    </a>
+                    <button onclick="shareReport('${data.report_url}')" 
+                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
+                        📤 Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+}
+
+function closeQRModal() {
+    const modal = document.getElementById('qr-modal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+function shareReport(reportUrl) {
+    if (navigator.share) {
+        navigator.share({
+            title: 'My Health Report - SwasthyaAI',
+            text: 'View my comprehensive health assessment report:',
+            url: reportUrl
+        }).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(reportUrl).then(() => {
+            showNotification('✅ Report URL copied to clipboard!', 'success');
+        }).catch(() => {
+            alert(`Share this URL:\n${reportUrl}`);
+        });
+    }
+}
+
+function showNotification(message, type = 'success') {
+    const colors = {
+        success: 'bg-green-100 border-green-500 text-green-700',
+        error: 'bg-red-100 border-red-500 text-red-700',
+        warning: 'bg-yellow-100 border-yellow-500 text-yellow-700',
+        info: 'bg-blue-100 border-blue-500 text-blue-700'
+    };
+    
+    const icons = {
+        success: '✅',
+        error: '❌',
+        warning: '⚠️',
+        info: 'ℹ️'
+    };
+    
+    const div = document.createElement('div');
+    div.className = `fixed top-4 right-4 px-4 py-3 rounded-lg border ${colors[type] || colors.info} z-50 shadow-lg max-w-md`;
+    div.innerHTML = `
+        <div class="flex items-center space-x-2">
+            <span class="text-xl">${icons[type] || 'ℹ️'}</span>
+            <span>${message}</span>
+        </div>
+    `;
+    document.body.appendChild(div);
+    
+    setTimeout(() => {
+        div.remove();
+    }, 3000);
+}
+
+// ============================================================
 // REFRESH & AUTO-UPDATE
 // ============================================================
 
@@ -349,12 +491,10 @@ function refreshDashboard() {
     loadAllDashboardData();
 }
 
-// Auto-refresh every 30 seconds
 setInterval(function() {
     loadAllDashboardData();
 }, 30000);
 
-// Refresh when page becomes visible
 document.addEventListener('visibilitychange', function() {
     if (!document.hidden) {
         console.log('👁️ Page became visible, refreshing...');
@@ -367,10 +507,13 @@ document.addEventListener('visibilitychange', function() {
 // ============================================================
 
 document.addEventListener('keydown', function(e) {
-    // Ctrl+R or Ctrl+Shift+R to refresh dashboard
     if (e.ctrlKey && (e.key === 'r' || e.key === 'R')) {
         e.preventDefault();
         refreshDashboard();
+    }
+    
+    if (e.key === 'Escape') {
+        closeQRModal();
     }
 });
 
@@ -382,17 +525,11 @@ window.dashboard = {
     sessionId: sessionId,
     loadAllDashboardData: loadAllDashboardData,
     refreshDashboard: refreshDashboard,
-    updatePatientInfo: updatePatientInfo,
-    updateRiskAssessment: updateRiskAssessment,
-    updateSymptoms: updateSymptoms,
-    updateFamilyHistory: updateFamilyHistory,
-    updateDiagnosis: updateDiagnosis,
-    updateRiskFactors: updateRiskFactors
+    generateQRCode: generateQRCode,
+    closeQRModal: closeQRModal,
+    shareReport: shareReport,
+    showNotification: showNotification
 };
 
-console.log('🔧 Dashboard debugging tools available: window.dashboard');
-console.log('   - window.dashboard.refreshDashboard()');
-console.log('   - window.dashboard.loadAllDashboardData()');
-console.log('   - window.dashboard.sessionId');
-
+console.log('🔧 Dashboard debugging tools: window.dashboard');
 console.log('✅ Dashboard Module Loaded Successfully!');
