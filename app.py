@@ -38,7 +38,7 @@ for file in [USERS_FILE, FAMILY_HISTORY_FILE, REPORTS_FILE, SYMPTOMS_FILE, CONVE
 conversation_history = {}
 
 # ============================================================
-# AUTHENTICATION ROUTES (NEW - No existing features affected)
+# AUTHENTICATION ROUTES
 # ============================================================
 
 @app.route('/login')
@@ -187,7 +187,7 @@ def get_user(user_id):
     })
 
 # ============================================================
-# PROTECTED ROUTES (Require login - added authentication check)
+# PROTECTED ROUTES
 # ============================================================
 
 @app.route('/')
@@ -226,7 +226,7 @@ def reports():
     return render_template('reports.html', username=session.get('username'))
 
 # ============================================================
-# API ROUTES (Added authentication check - existing functionality preserved)
+# 🆕 UPDATED API ROUTES (with Critical Symptom Support)
 # ============================================================
 
 @app.route('/api/chat', methods=['POST'])
@@ -251,8 +251,12 @@ def handle_chat():
         'timestamp': datetime.now().isoformat()
     })
     
-    # Parse symptoms from message
+    # 🆕 Parse symptoms from message (now includes critical flags)
     symptoms = symptom_parser.parse(user_message)
+    
+    # 🆕 Check for critical symptoms and log them
+    has_critical = symptom_parser.has_critical_symptoms(symptoms)
+    critical_warnings = symptom_parser.get_critical_warnings(symptoms) if has_critical else []
     
     # Get family history for this user
     family_history = load_json(FAMILY_HISTORY_FILE).get(session_id, {})
@@ -260,7 +264,8 @@ def handle_chat():
     # Check if user mentioned family in message
     family_keywords = ['father', 'mother', 'brother', 'sister', 'grandfather', 
                        'grandmother', 'family', 'parent', 'aunt', 'uncle', 
-                       'grandparent', 'diabetes', 'hypertension', 'heart', 'cancer']
+                       'grandparent', 'diabetes', 'hypertension', 'heart', 'cancer',
+                       'skin cancer', 'melanoma']  # 🆕 Added skin cancer keywords
     
     if any(word in user_message.lower() for word in family_keywords):
         extracted_family = extract_family_history_from_message(user_message)
@@ -281,12 +286,18 @@ def handle_chat():
     # Get recent conversation context
     recent_messages = conversation_history[session_id][-8:] if conversation_history[session_id] else []
     
-    # Generate follow-up questions
+    # 🆕 Generate follow-up questions (now includes mole/skin questions)
     follow_up = question_generator.generate_questions_with_context(
         symptoms, 
         user_message, 
         recent_messages
     )
+    
+    # 🆕 If critical symptoms detected, add warning to follow-up
+    if has_critical:
+        follow_up.insert(0, "⚠️ **URGENT**: Your symptoms require medical attention. Please schedule a doctor's appointment immediately.")
+        if any('mole' in w.lower() for w in critical_warnings):
+            follow_up.insert(1, "📸 Please take clear photos of the mole with a ruler for scale before your appointment.")
     
     # Get response from Groq with full context
     groq_response = groq_service.get_response(
@@ -294,6 +305,14 @@ def handle_chat():
         symptoms, 
         family_history
     )
+    
+    # 🆕 Add critical warning to Groq response if needed
+    if has_critical and critical_warnings:
+        warning_header = "🚨 **CRITICAL SYMPTOM DETECTED**\n\n"
+        for warning in critical_warnings:
+            warning_header += f"• {warning}\n"
+        warning_header += "\n" + "="*50 + "\n\n"
+        groq_response = warning_header + groq_response
     
     # Add bot response to history
     conversation_history[session_id].append({
@@ -306,13 +325,17 @@ def handle_chat():
     save_conversation(session_id, conversation_history[session_id])
     save_user_symptoms(session_id, symptoms, user_message)
     
+    # 🆕 Return enhanced response with critical flags
     return jsonify({
         'response': groq_response,
         'symptoms': symptoms,
         'follow_up': follow_up,
         'conversation_count': len(conversation_history[session_id]),
         'family_history': family_history,
-        'session_id': session_id
+        'session_id': session_id,
+        'has_critical_symptoms': has_critical,
+        'critical_warnings': critical_warnings,
+        'risk_escalated': has_critical  # Frontend can use this to show alerts
     })
 
 @app.route('/api/diagnose', methods=['POST'])
@@ -337,6 +360,18 @@ def diagnose():
     all_family = load_json(FAMILY_HISTORY_FILE)
     family_history = all_family.get(session_id, {})
     
+    # 🆕 Get the latest symptoms with all data (including critical flags)
+    latest_symptoms = symptoms_data[-1]['symptoms'] if symptoms_data else {}
+    duration = latest_symptoms.get('duration', 0)
+    
+    # 🆕 Calculate risk score with FULL symptom data
+    risk_result = risk_engine.calculate_risk(
+        symptoms=latest_symptoms,
+        family_history=family_history,
+        duration=duration,
+        user_message=symptoms_data[-1].get('message', '') if symptoms_data else ''
+    )
+    
     # Get comprehensive diagnosis from Groq
     diagnosis = groq_service.get_comprehensive_diagnosis(
         conversations,
@@ -344,13 +379,16 @@ def diagnose():
         family_history
     )
     
-    # Calculate risk score
-    latest_symptoms = symptoms_data[-1]['symptoms'] if symptoms_data else {}
-    risk_result = risk_engine.calculate_risk(
-        latest_symptoms,
-        family_history,
-        latest_symptoms.get('duration', 0)
-    )
+    # 🆕 Add risk data to diagnosis
+    if 'summary' in diagnosis:
+        risk_summary = f"\n\n📊 **RISK ASSESSMENT**\n• Risk Level: {risk_result['level']}\n• Risk Score: {risk_result['score']}/100\n"
+        if risk_result.get('specialty'):
+            risk_summary += f"• Recommended Specialist: {risk_result['specialty'].upper()}\n"
+        if risk_result.get('critical_findings'):
+            risk_summary += "• Critical Findings: " + ", ".join(risk_result['critical_findings']) + "\n"
+        if risk_result.get('urgent'):
+            risk_summary += "• 🚨 URGENT: Immediate medical attention recommended\n"
+        diagnosis['summary'] = diagnosis['summary'] + risk_summary
     
     # Generate complete report
     report = {
@@ -364,6 +402,9 @@ def diagnose():
         'risk_level': risk_result['level'],
         'risk_factors': risk_result['factors'],
         'recommendations': risk_result['recommendations'],
+        'specialty': risk_result.get('specialty'),
+        'critical_findings': risk_result.get('critical_findings', []),
+        'urgent': risk_result.get('urgent', False),
         'summary': diagnosis.get('summary', '')
     }
     
@@ -378,6 +419,9 @@ def diagnose():
         'risk_level': risk_result['level'],
         'risk_factors': risk_result['factors'],
         'recommendations': risk_result['recommendations'],
+        'specialty': risk_result.get('specialty'),
+        'critical_findings': risk_result.get('critical_findings', []),
+        'urgent': risk_result.get('urgent', False),
         'diagnosis': diagnosis,
         'family_history': family_history,
         'symptoms': symptoms_data,
@@ -414,6 +458,11 @@ def get_dashboard_data(session_id):
     all_symptoms = load_json(SYMPTOMS_FILE)
     symptoms_data = all_symptoms.get(session_id, [])
     
+    # 🆕 Count critical symptoms
+    critical_count = 0
+    if latest_report:
+        critical_count = len(latest_report.get('critical_findings', []))
+    
     return jsonify({
         'patient_id': session_id,
         'patient_data': patient_data,
@@ -421,7 +470,9 @@ def get_dashboard_data(session_id):
         'family_history': family_history,
         'symptoms': symptoms_data,
         'total_visits': len(patient_reports),
-        'has_data': latest_report is not None
+        'has_data': latest_report is not None,
+        'critical_count': critical_count,
+        'urgent': latest_report.get('urgent', False) if latest_report else False
     })
 
 @app.route('/api/patient/<session_id>', methods=['GET'])
@@ -525,18 +576,23 @@ def reset_conversation():
     return jsonify({'status': 'success', 'message': 'Conversation reset'})
 
 # ============================================================
-# HELPER FUNCTIONS (UNCHANGED)
+# 🆕 HELPER FUNCTIONS (UPDATED)
 # ============================================================
 
 def extract_family_history_from_message(message):
-    """Extract family history from user message"""
+    """Extract family history from user message - Updated with skin conditions"""
     message = message.lower()
     family_data = {}
     
     relations = ['father', 'mother', 'brother', 'sister', 'grandfather', 
-                 'grandmother', 'aunt', 'uncle', 'cousin', 'parent']
+                 'grandmother', 'aunt', 'uncle', 'cousin', 'parent', 'grandparent',
+                 'sibling', 'spouse', 'child']  # 🆕 Added more relations
+    
+    # 🆕 Added skin cancer and more conditions
     conditions = ['diabetes', 'hypertension', 'heart disease', 'cancer', 'stroke', 
-                  'kidney disease', 'asthma', 'arthritis', 'depression', 'alzheimer']
+                  'kidney disease', 'asthma', 'arthritis', 'depression', 'alzheimer',
+                  'skin cancer', 'melanoma', 'thyroid', 'anemia', 'autoimmune',
+                  'lupus', 'psoriasis', 'eczema', 'high cholesterol', 'obesity']
     
     for relation in relations:
         if relation in message:
@@ -559,10 +615,16 @@ def save_user_symptoms(session_id, symptoms, message):
     if session_id not in all_data:
         all_data[session_id] = []
     
+    # 🆕 Store complete symptom data including critical flags
     all_data[session_id].append({
         'timestamp': datetime.now().isoformat(),
         'message': message,
-        'symptoms': symptoms
+        'symptoms': symptoms,
+        'has_critical': symptoms.get('critical', False),
+        'critical_type': symptoms.get('critical_type', []),
+        'severity': symptoms.get('severity', 1.0),
+        'duration': symptoms.get('duration', 0),
+        'duration_unit': symptoms.get('duration_unit', 'days')
     })
     
     save_json(SYMPTOMS_FILE, all_data)
@@ -581,14 +643,26 @@ def save_patient_data(session_id, report):
         all_patients[session_id] = {
             'patient_id': session_id,
             'created_at': datetime.now().isoformat(),
-            'visits': []
+            'visits': [],
+            'critical_alerts': []  # 🆕 Track critical alerts
         }
+    
+    # 🆕 Track critical alerts
+    if report.get('urgent', False):
+        all_patients[session_id]['critical_alerts'].append({
+            'date': datetime.now().isoformat(),
+            'risk_level': report.get('risk_level'),
+            'critical_findings': report.get('critical_findings', []),
+            'specialty': report.get('specialty')
+        })
     
     all_patients[session_id]['visits'].append({
         'date': datetime.now().isoformat(),
         'report': report
     })
     all_patients[session_id]['last_visit'] = datetime.now().isoformat()
+    all_patients[session_id]['last_risk_level'] = report.get('risk_level')
+    all_patients[session_id]['last_risk_score'] = report.get('risk_score')
     
     save_json(PATIENTS_FILE, all_patients)
 
