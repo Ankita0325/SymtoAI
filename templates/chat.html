@@ -3,27 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat - SwasthyaAI</title>
+    <title>Chat - SymtoAI</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .navbar {
+            background: white;
+            padding: 12px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f1f5f9;
+            border-radius: 50px;
+            padding: 6px 8px 6px 20px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .nav-brand svg {
+            width: 24px;
+            height: 24px;
+        }
+        .nav-brand span {
+            color: #1e293b;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .nav-links a {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover {
+            background: rgba(37, 99, 235, 0.08);
+            color: #1e293b;
+        }
+        .nav-links a.active {
+            background: #2563eb;
+            color: white;
+        }
+        .nav-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: white;
+            border-radius: 50px;
+            padding: 4px 14px 4px 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .user-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .user-name {
+            color: #334155;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background: #dc2626;
+        }
+        @media (max-width: 768px) {
+            .nav-links a {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+            .nav-brand span {
+                font-size: 14px;
+            }
+            .user-name {
+                display: none;
+            }
+            .nav-container {
+                padding: 4px 6px 4px 14px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    <nav class="bg-blue-600 text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <span class="text-2xl font-bold">🏥</span>
-                    <span class="text-xl font-bold">SwasthyaAI</span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <svg viewBox="0 0 24 24" fill="#2563eb">
+                    <path d="M12 4C8.13 4 5 7.13 5 11v1H4c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v2c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2H7v-2c0-2.76 2.24-5 5-5s5 2.24 5 5v2h-2c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-2h1c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2h-1v-1c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="17" cy="16" r="2" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+                    <path d="M17 14c1.1 0 2 .9 2 2s-.9 2-2 2" stroke="#2563eb" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span>SymtoAI</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/chat" class="active">Chat</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/family-history">Family History</a>
+                <a href="/reports">Reports</a>
+            </div>
+
+            <div class="nav-user">
+                <div class="user-badge">
+                    <div class="user-avatar">{{ (username[0] if username else 'U') | upper }}</div>
+                    <span class="user-name">{{ username if username else 'User' }}</span>
                 </div>
-                <div class="flex space-x-4 items-center">
-                    <a href="/" class="hover:text-blue-200">Home</a>
-                    <a href="/chat" class="hover:text-blue-200">Chat</a>
-                    <a href="/dashboard" class="hover:text-blue-200">Dashboard</a>
-                    <a href="/family-history" class="hover:text-blue-200">Family History</a>
-                    <a href="/reports" class="hover:text-blue-200">Reports</a>
-                    <span class="text-sm text-blue-200">👤 {{ username if username else 'User' }}</span>
-                    <a href="/logout" class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-sm transition">Logout</a>
-                </div>
+                <a href="/logout" class="logout-btn">Logout</a>
             </div>
         </div>
     </nav>
@@ -36,7 +161,7 @@
                 <div id="chat-messages" class="h-96 overflow-y-auto p-6 bg-gray-50">
                     <div class="flex items-start mb-4">
                         <div class="bg-blue-100 rounded-lg p-3 max-w-3/4">
-                            <p class="text-gray-800">Hello! I'm SwasthyaAI, your health screening assistant. 
+                            <p class="text-gray-800">Hello! I'm SymtoAI, your health screening assistant. 
                             Please describe your symptoms (e.g., "I have fever, headache, and cough for 3 days"). 
                             I'll ask follow-up questions and provide a comprehensive assessment.</p>
                             <span class="text-xs text-gray-500 mt-1 block">Assistant</span>
@@ -86,5 +211,12 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            if (link.getAttribute('href') === window.location.pathname) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
