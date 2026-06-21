@@ -22,6 +22,42 @@
       "timestamp": "2026-06-21T11:21:13.477212",
       "message": "blood",
       "symptoms": {}
+    },
+    {
+      "timestamp": "2026-06-21T12:48:57.237763",
+      "message": "i have fever from 5days",
+      "symptoms": {
+        "fever": true,
+        "duration": 5,
+        "duration_unit": "days"
+      }
+    },
+    {
+      "timestamp": "2026-06-21T12:49:20.438173",
+      "message": "i m doing vommiting from 5day",
+      "symptoms": {
+        "duration": 5,
+        "duration_unit": "days"
+      }
+    },
+    {
+      "timestamp": "2026-06-21T12:50:03.596821",
+      "message": "frequency,fever",
+      "symptoms": {
+        "fever": true
+      }
+    },
+    {
+      "timestamp": "2026-06-21T13:52:12.276526",
+      "message": "hi",
+      "symptoms": {}
+    },
+    {
+      "timestamp": "2026-06-21T13:52:21.526476",
+      "message": "i have fever",
+      "symptoms": {
+        "fever": true
+      }
     }
   ]
 }

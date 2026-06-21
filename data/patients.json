@@ -91,8 +91,321 @@
           "recommendations": "Your current risk appears minimal. Continue maintaining a healthy lifestyle and monitor any changes.",
           "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Headache: 1 day, severity 6/10\n\u2022 Vomiting: 5 days, severity 8/10\n\u2022 Blood in vomit: 1 day, severity 9/10\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 No family history provided\n\u2022 Genetic risk implications unknown due to lack of information\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Gastrointestinal bleeding\n2. Peptic ulcer disease\n3. Gastroenteritis\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Prolonged vomiting\n  - Blood in vomit\n  - Potential for dehydration and electrolyte imbalances\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek immediate medical attention due to the presence of blood in vomit\n2. Stay hydrated by drinking small, frequent amounts of water or electrolyte-rich beverages\n3. Avoid solid foods for now and opt for a bland diet when ready to eat\n4. Practice good hygiene to prevent the spread of infection\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Severe abdominal pain\n\u2022 Difficulty breathing\n\u2022 Heavy bleeding or vomiting\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Contact a healthcare professional or visit the emergency room immediately\n\u2022 Provide a detailed account of symptoms, including the duration and severity of vomiting and the presence of blood\n\u2022 Follow the recommended treatment plan and attend any scheduled follow-up appointments"
         }
+      },
+      {
+        "date": "2026-06-21T12:50:32.651460",
+        "report": {
+          "patient_id": "user_1782020955071",
+          "date": "2026-06-21T12:50:32.635220",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T11:19:26.976567",
+              "message": "5+5",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T11:19:48.253135",
+              "message": "i have headach",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T11:20:51.286795",
+              "message": "i m doing vommiting from 5days",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T11:21:13.477212",
+              "message": "blood",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T12:48:57.237763",
+              "message": "i have fever from 5days",
+              "symptoms": {
+                "fever": true,
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T12:49:20.438173",
+              "message": "i m doing vommiting from 5day",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T12:50:03.596821",
+              "message": "frequency,fever",
+              "symptoms": {
+                "fever": true
+              }
+            }
+          ],
+          "family_history": {
+            "grandmother": [
+              "diabetes"
+            ],
+            "father": [
+              "diabetes"
+            ]
+          },
+          "conversation": [
+            {
+              "role": "user",
+              "content": "i have fever from 5days",
+              "timestamp": "2026-06-21T12:48:55.315870"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\uddd8\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I'm so sorry to hear that you've been experiencing a fever for 5 days, and I'm here to support you in any way I can.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you please tell me if you have any other symptoms accompanying the fever, such as headache, body aches, or cough?\n\u2022 Have you taken any medication to help manage the fever, and if so, what type and dosage?\n\u2022 Given your family history of diabetes, have you noticed any changes in your appetite, thirst, or urination patterns?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Fever can be a symptom of various underlying conditions, including infections, inflammation, or even autoimmune disorders.\n\u2022 It's essential to consider your family history of diabetes, as some infections can trigger or worsen diabetes symptoms.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages like coconut water or sports drinks.\n\u2022 Consider taking over-the-counter medication like acetaminophen or ibuprofen to help reduce the fever, but always follow the recommended dosage.\n\u2022 Get plenty of rest to help your body recover from the underlying infection or condition.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If your fever persists or worsens, or if you experience severe symptoms like difficulty breathing, chest pain, or severe headache, please seek medical attention immediately.\n\u2022 Additionally, if you notice any signs of dehydration, such as excessive thirst, dark urine, or dizziness, seek help right away.",
+              "timestamp": "2026-06-21T12:48:57.230613"
+            },
+            {
+              "role": "user",
+              "content": "i m doing vommiting from 5day",
+              "timestamp": "2026-06-21T12:49:18.890887"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\uddd8\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I'm so sorry to hear that you've been experiencing vomiting for 5 days, and I'm here to support you in any way I can.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about the vomiting episodes, such as their frequency, severity, and any potential triggers?\n\u2022 Have you experienced any other symptoms like fever, abdominal pain, or diarrhea?\n\u2022 Have you recently traveled, eaten something unusual, or been exposed to anyone with a similar illness?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Given your family history of diabetes, it's possible that your symptoms could be related to a gastrointestinal issue or an underlying condition like gastroparesis, which is common in people with diabetes.\n\u2022 Vomiting can lead to dehydration, so it's essential to monitor your fluid intake and electrolyte balance.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Try to stay hydrated by drinking small, frequent amounts of water, clear broth, or electrolyte-rich beverages like coconut water or sports drinks.\n\u2022 Avoid solid foods for now and opt for a bland diet like crackers, toast, or plain rice to help settle your stomach.\n\u2022 Consider keeping a food diary to track any potential triggers or patterns in your symptoms.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If your symptoms worsen, last longer than 7-10 days, or are accompanied by severe abdominal pain, fever, or signs of dehydration, please seek medical attention.\n\u2022 If you experience any emergency warning signs like difficulty breathing, chest pain, or severe headache, call emergency services or visit the emergency room immediately.",
+              "timestamp": "2026-06-21T12:49:20.376167"
+            },
+            {
+              "role": "user",
+              "content": "frequency,fever",
+              "timestamp": "2026-06-21T12:50:02.339898"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\uddd8\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I'm so sorry to hear that you're experiencing a fever, and I'm here to support you in any way I can.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you please tell me how long you've been experiencing the fever?\n\u2022 Have you noticed any other symptoms, such as chills, headaches, or body aches?\n\u2022 Are you taking any medications or have any pre-existing medical conditions that I should be aware of?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Given your family history of diabetes, it's essential to monitor your blood sugar levels and maintain a healthy lifestyle to reduce your risk.\n\u2022 Fever can be a symptom of various conditions, and it's crucial to identify the underlying cause to provide proper treatment.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages.\n\u2022 Rest and avoid strenuous activities to help your body recover.\n\u2022 Consider taking over-the-counter medications, such as acetaminophen or ibuprofen, to help manage your fever and alleviate any discomfort.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If your fever persists or worsens, or if you experience severe symptoms, such as difficulty breathing, chest pain, or severe headaches, seek medical attention immediately.\n\u2022 If you have a weakened immune system or are concerned about your symptoms, it's always best to consult with a healthcare professional for personalized guidance and care.",
+              "timestamp": "2026-06-21T12:50:03.534387"
+            }
+          ],
+          "diagnosis": {
+            "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days, severity unknown\n\u2022 Vomiting: 5 days, frequency and severity unknown\n\u2022 Blood: mentioned, but no further information available\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 Family history of diabetes: grandmother and father\n\u2022 Genetic risk implications: increased risk of developing diabetes and related complications\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Gastroenteritis (inflammation of the stomach and intestines)\n2. Food poisoning\n3. Viral or bacterial infection\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Family history of diabetes\n  - Prolonged fever and vomiting\n  - Unknown severity of symptoms\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek medical attention immediately to rule out underlying conditions and prevent complications\n2. Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages\n3. Rest and avoid strenuous activities to help the body recover\n4. Consider taking over-the-counter medications, such as acetaminophen or ibuprofen, to help manage fever and alleviate discomfort\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Difficulty breathing or shortness of breath\n\u2022 Severe abdominal pain or cramping\n\u2022 Signs of dehydration, such as excessive thirst, dark urine, or dizziness\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare professional to discuss symptoms and determine the best course of action\n\u2022 Keep a symptom journal to track progress and identify potential triggers\n\u2022 Follow the recommended treatment plan and attend follow-up appointments as scheduled",
+            "conditions": [
+              "1. Gastroenteritis (inflammation of the stomach and intestines)",
+              "2. Food poisoning",
+              "3. Viral or bacterial infection"
+            ],
+            "risk_level": "High"
+          },
+          "risk_score": 65,
+          "risk_level": "Moderate",
+          "risk_factors": [
+            "fever",
+            "diabetes in grandmother",
+            "diabetes in father"
+          ],
+          "recommendations": "We recommend scheduling a doctor consultation within the next few days. Monitor your symptoms closely.",
+          "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days, severity unknown\n\u2022 Vomiting: 5 days, frequency and severity unknown\n\u2022 Blood: mentioned, but no further information available\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 Family history of diabetes: grandmother and father\n\u2022 Genetic risk implications: increased risk of developing diabetes and related complications\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Gastroenteritis (inflammation of the stomach and intestines)\n2. Food poisoning\n3. Viral or bacterial infection\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Family history of diabetes\n  - Prolonged fever and vomiting\n  - Unknown severity of symptoms\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek medical attention immediately to rule out underlying conditions and prevent complications\n2. Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages\n3. Rest and avoid strenuous activities to help the body recover\n4. Consider taking over-the-counter medications, such as acetaminophen or ibuprofen, to help manage fever and alleviate discomfort\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Difficulty breathing or shortness of breath\n\u2022 Severe abdominal pain or cramping\n\u2022 Signs of dehydration, such as excessive thirst, dark urine, or dizziness\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare professional to discuss symptoms and determine the best course of action\n\u2022 Keep a symptom journal to track progress and identify potential triggers\n\u2022 Follow the recommended treatment plan and attend follow-up appointments as scheduled"
+        }
+      },
+      {
+        "date": "2026-06-21T12:57:46.416379",
+        "report": {
+          "patient_id": "user_1782020955071",
+          "date": "2026-06-21T12:57:46.389085",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T11:19:26.976567",
+              "message": "5+5",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T11:19:48.253135",
+              "message": "i have headach",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T11:20:51.286795",
+              "message": "i m doing vommiting from 5days",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T11:21:13.477212",
+              "message": "blood",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T12:48:57.237763",
+              "message": "i have fever from 5days",
+              "symptoms": {
+                "fever": true,
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T12:49:20.438173",
+              "message": "i m doing vommiting from 5day",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T12:50:03.596821",
+              "message": "frequency,fever",
+              "symptoms": {
+                "fever": true
+              }
+            }
+          ],
+          "family_history": {
+            "grandmother": [
+              "diabetes"
+            ],
+            "father": [
+              "diabetes"
+            ]
+          },
+          "conversation": [],
+          "diagnosis": {
+            "summary": "=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Vomiting: 5 days, severity unknown\n\u2022 Fever: 5 days, severity unknown\n\u2022 Blood in vomit: 1 episode, severity high\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 Family history of diabetes (grandmother and father)\n\u2022 Genetic risk implications: increased risk of developing diabetes and potentially other metabolic disorders\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Gastrointestinal infection (e.g., food poisoning, viral gastroenteritis)\n2. Peptic ulcer disease\n3. Gastroesophageal reflux disease (GERD)\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Family history of diabetes\n  - Presence of blood in vomit\n  - Duration and severity of vomiting and fever\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek immediate medical attention due to the presence of blood in vomit and prolonged duration of symptoms\n2. Undergo diagnostic tests (e.g., complete blood count, blood chemistry, imaging studies) to determine the underlying cause of symptoms\n3. Receive treatment for dehydration and electrolyte imbalances\n4. Follow up with a healthcare provider to monitor symptoms and adjust treatment plan as needed\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Severe abdominal pain\n\u2022 Vomiting blood or black tarry stools\n\u2022 Fever above 103\u00b0F (39.4\u00b0C)\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare provider to discuss symptoms and treatment options\n\u2022 Keep a symptom journal to track the duration and severity of symptoms\n\u2022 Follow the recommended treatment plan and attend follow-up appointments to monitor progress and adjust the plan as needed",
+            "conditions": [
+              "1. Gastrointestinal infection (e.g., food poisoning, viral gastroenteritis)",
+              "2. Peptic ulcer disease",
+              "3. Gastroesophageal reflux disease (GERD)"
+            ],
+            "risk_level": "High"
+          },
+          "risk_score": 65,
+          "risk_level": "Moderate",
+          "risk_factors": [
+            "fever",
+            "diabetes in grandmother",
+            "diabetes in father"
+          ],
+          "recommendations": "We recommend scheduling a doctor consultation within the next few days. Monitor your symptoms closely.",
+          "summary": "=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Vomiting: 5 days, severity unknown\n\u2022 Fever: 5 days, severity unknown\n\u2022 Blood in vomit: 1 episode, severity high\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 Family history of diabetes (grandmother and father)\n\u2022 Genetic risk implications: increased risk of developing diabetes and potentially other metabolic disorders\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Gastrointestinal infection (e.g., food poisoning, viral gastroenteritis)\n2. Peptic ulcer disease\n3. Gastroesophageal reflux disease (GERD)\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Family history of diabetes\n  - Presence of blood in vomit\n  - Duration and severity of vomiting and fever\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek immediate medical attention due to the presence of blood in vomit and prolonged duration of symptoms\n2. Undergo diagnostic tests (e.g., complete blood count, blood chemistry, imaging studies) to determine the underlying cause of symptoms\n3. Receive treatment for dehydration and electrolyte imbalances\n4. Follow up with a healthcare provider to monitor symptoms and adjust treatment plan as needed\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Severe abdominal pain\n\u2022 Vomiting blood or black tarry stools\n\u2022 Fever above 103\u00b0F (39.4\u00b0C)\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare provider to discuss symptoms and treatment options\n\u2022 Keep a symptom journal to track the duration and severity of symptoms\n\u2022 Follow the recommended treatment plan and attend follow-up appointments to monitor progress and adjust the plan as needed"
+        }
+      },
+      {
+        "date": "2026-06-21T13:52:26.523315",
+        "report": {
+          "patient_id": "user_1782020955071",
+          "date": "2026-06-21T13:52:26.512982",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T11:19:26.976567",
+              "message": "5+5",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T11:19:48.253135",
+              "message": "i have headach",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T11:20:51.286795",
+              "message": "i m doing vommiting from 5days",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T11:21:13.477212",
+              "message": "blood",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T12:48:57.237763",
+              "message": "i have fever from 5days",
+              "symptoms": {
+                "fever": true,
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T12:49:20.438173",
+              "message": "i m doing vommiting from 5day",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T12:50:03.596821",
+              "message": "frequency,fever",
+              "symptoms": {
+                "fever": true
+              }
+            },
+            {
+              "timestamp": "2026-06-21T13:52:12.276526",
+              "message": "hi",
+              "symptoms": {}
+            },
+            {
+              "timestamp": "2026-06-21T13:52:21.526476",
+              "message": "i have fever",
+              "symptoms": {
+                "fever": true
+              }
+            }
+          ],
+          "family_history": {
+            "grandmother": [
+              "diabetes"
+            ],
+            "father": [
+              "diabetes"
+            ]
+          },
+          "conversation": [
+            {
+              "role": "user",
+              "content": "hi",
+              "timestamp": "2026-06-21T13:52:10.888674"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\uddd8\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I'm here to support you, and I've taken note of your family history with diabetes, which is an important factor in understanding your health.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me a bit about your diet and physical activity level?\n\u2022 Have you noticed any changes in your body or energy levels recently?\n\u2022 Are you currently experiencing any stress or anxiety?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Given your family history, you may be at a higher risk for developing diabetes, so it's essential to maintain a healthy lifestyle.\n\u2022 Regular health check-ups can help identify any potential issues early on, allowing for timely intervention.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 I recommend scheduling a health check-up with your doctor to discuss your family history and assess your risk factors.\n\u2022 Consider incorporating physical activity into your daily routine, such as a 30-minute walk, to help maintain a healthy weight.\n\u2022 Eat a balanced diet rich in whole foods, fruits, and vegetables to support your overall health.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If you experience any symptoms such as increased thirst, frequent urination, or blurred vision, seek medical attention promptly.\n\u2022 If you have concerns about your health or family history, don't hesitate to reach out to your doctor for guidance and support.",
+              "timestamp": "2026-06-21T13:52:12.276526"
+            },
+            {
+              "role": "user",
+              "content": "i have fever",
+              "timestamp": "2026-06-21T13:52:20.142641"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\uddd8\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I'm so sorry to hear that you're experiencing a fever, and I'm here to support you in any way I can.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you please tell me how long you've been experiencing the fever, or approximately when it started?\n\u2022 Are you experiencing any other symptoms, such as headache, body aches, or fatigue?\n\u2022 Have you recently traveled or been exposed to anyone who is sick?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Given your family history of diabetes, it's essential to monitor your overall health, including blood sugar levels and potential infections.\n\u2022 Fever can be a symptom of various conditions, ranging from minor infections to more severe illnesses, so it's crucial to identify the underlying cause.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages like coconut water or sports drinks.\n\u2022 Rest and avoid strenuous activities to help your body recover from the fever.\n\u2022 Consider taking over-the-counter medications like acetaminophen or ibuprofen to help manage your fever and alleviate any discomfort.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If your fever exceeds 103\u00b0F (39.4\u00b0C), lasts for more than 3 days, or is accompanied by severe symptoms like difficulty breathing, chest pain, or severe headache, seek medical attention immediately.\n\u2022 If you experience any emergency warning signs, such as severe vomiting, diarrhea, or signs of dehydration, call emergency services or visit the nearest hospital.",
+              "timestamp": "2026-06-21T13:52:21.477699"
+            }
+          ],
+          "diagnosis": {
+            "summary": "=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days, severity unknown\n\u2022 Vomiting: 5 days, frequency unknown\n\u2022 Increased frequency of urination: duration and severity unknown\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 Family history of diabetes: grandmother and father\n\u2022 Genetic risk implications: increased risk of developing diabetes and potentially other metabolic disorders\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Diabetic ketoacidosis (DKA)\n2. Urinary tract infection (UTI)\n3. Gastroenteritis\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Family history of diabetes\n  - Presence of fever and vomiting\n  - Increased frequency of urination\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek immediate medical attention due to the severity and duration of symptoms\n2. Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages\n3. Rest and avoid strenuous activities to help the body recover\n4. Monitor blood sugar levels and urine output closely\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Severe vomiting or diarrhea\n\u2022 Fever exceeding 103\u00b0F (39.4\u00b0C)\n\u2022 Signs of dehydration, such as excessive thirst, dark urine, or decreased urine output\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an urgent appointment with a healthcare provider\n\u2022 Provide a detailed account of symptoms, including duration and severity\n\u2022 Discuss family history and potential risk factors with the healthcare provider",
+            "conditions": [
+              "1. Diabetic ketoacidosis (DKA)",
+              "2. Urinary tract infection (UTI)",
+              "3. Gastroenteritis"
+            ],
+            "risk_level": "High"
+          },
+          "risk_score": 65,
+          "risk_level": "Moderate",
+          "risk_factors": [
+            "fever",
+            "diabetes in grandmother",
+            "diabetes in father"
+          ],
+          "recommendations": "We recommend scheduling a doctor consultation within the next few days. Monitor your symptoms closely.",
+          "summary": "=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days, severity unknown\n\u2022 Vomiting: 5 days, frequency unknown\n\u2022 Increased frequency of urination: duration and severity unknown\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 Family history of diabetes: grandmother and father\n\u2022 Genetic risk implications: increased risk of developing diabetes and potentially other metabolic disorders\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Diabetic ketoacidosis (DKA)\n2. Urinary tract infection (UTI)\n3. Gastroenteritis\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: High\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Family history of diabetes\n  - Presence of fever and vomiting\n  - Increased frequency of urination\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Seek immediate medical attention due to the severity and duration of symptoms\n2. Stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages\n3. Rest and avoid strenuous activities to help the body recover\n4. Monitor blood sugar levels and urine output closely\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Severe vomiting or diarrhea\n\u2022 Fever exceeding 103\u00b0F (39.4\u00b0C)\n\u2022 Signs of dehydration, such as excessive thirst, dark urine, or decreased urine output\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an urgent appointment with a healthcare provider\n\u2022 Provide a detailed account of symptoms, including duration and severity\n\u2022 Discuss family history and potential risk factors with the healthcare provider"
+        }
       }
     ],
-    "last_visit": "2026-06-21T11:22:05.273707"
+    "last_visit": "2026-06-21T13:52:26.523315"
   }
 }
