@@ -1,1 +1,60 @@
-{}
+{
+  "user_1782043808854": [
+    {
+      "role": "user",
+      "content": "i m having vommiting issue from 5 days",
+      "timestamp": "2026-06-21T17:40:39.830513"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you haven't mentioned any specific symptoms\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Could you describe how you're feeling in more detail?\n\u2022 When did you first notice any changes in your health?\n\u2022 Do you have any other symptoms to share?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Please describe your symptoms with details like duration and severity\n\u2022 Include any family history that might be relevant\n",
+      "timestamp": "2026-06-21T17:40:40.412017"
+    },
+    {
+      "role": "user",
+      "content": "i have gain weight 7 kgs more",
+      "timestamp": "2026-06-21T17:41:06.405069"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you haven't mentioned any specific symptoms\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Could you describe how you're feeling in more detail?\n\u2022 When did you first notice any changes in your health?\n\u2022 Do you have any other symptoms to share?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Please describe your symptoms with details like duration and severity\n\u2022 Include any family history that might be relevant\n",
+      "timestamp": "2026-06-21T17:41:06.492556"
+    }
+  ],
+  "user_20260621_174001": [
+    {
+      "role": "user",
+      "content": "i have fever from 5 day",
+      "timestamp": "2026-06-21T20:23:22.633320"
+    },
+    {
+      "role": "assistant",
+      "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 You've been experiencing a fever for 5 days, which is a significant duration.\n\u2022 It's essential to take this symptom seriously and gather more information.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you please tell me what your temperature has been, and have you noticed any other symptoms like headache, body aches, or cough?\n\u2022 Have you taken any medications to try to reduce your fever, and if so, have they been effective?\n\u2022 Have you recently traveled or been exposed to anyone who has been sick?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 A prolonged fever can be a sign of an underlying infection or illness that needs medical attention.\n\u2022 Possible considerations include pneumonia, influenza, or other viral or bacterial infections.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 I strongly recommend that you consult a healthcare professional for a thorough evaluation and guidance.\n\u2022 They will be able to assess your condition, provide a proper diagnosis, and recommend appropriate treatment.\n\u2022 Do not attempt to treat your fever with home remedies; instead, seek medical attention.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 You should seek medical help today, as a prolonged fever can lead to more severe complications if left untreated.\n\u2022 If you experience any emergency warning signs such as difficulty breathing, chest pain, or severe headache, seek immediate attention.\n\u2022 Remember, this is not a medical diagnosis. Please consult a healthcare professional.",
+      "timestamp": "2026-06-21T20:23:25.060763"
+    }
+  ],
+  "user_20260621_203856": [
+    {
+      "role": "user",
+      "content": "I have fever, cough, and severe headache for 3 days.",
+      "timestamp": "2026-06-21T20:40:25.389519"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, headache\n\u2022 Duration: 3 days\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Consider scheduling a doctor consultation\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen or persist\n\u2022 If you experience severe pain or difficulty breathing\n",
+      "timestamp": "2026-06-21T20:40:25.504969"
+    }
+  ],
+  "user_20260621_210648": [
+    {
+      "role": "user",
+      "content": "I have a high fever, idry cough, and shortness of breath.",
+      "timestamp": "2026-06-21T21:09:03.036517"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, shortness of breath\n\u2022 Duration: not specified days\n\n\ud83d\udea8 **\u26a0\ufe0f CRITICAL SYMPTOM DETECTED**\n\u2022 Please seek medical attention immediately\n\u2022 Do not rely on this AI assessment for diagnosis\n\u2022 This requires evaluation by a healthcare professional\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Seek immediate medical attention\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 TODAY - This requires medical evaluation\n\u2022 If you experience severe pain or difficulty breathing\n",
+      "timestamp": "2026-06-21T21:09:03.119565"
+    }
+  ]
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SymtoAI - Health Screening Assistant</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         /* Round Navbar Styles */
@@ -266,10 +267,18 @@
     <footer class="bg-gray-800 text-white py-6 mt-12">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2026 SymtoAI - Health Screening Assistant</p>
-            <p class="text-sm text-gray-400 mt-2">⚠️ This tool does not provide medical diagnosis. Always consult a healthcare professional.</p>
+            <p class="text-sm text-gray-400 mt-2"><i class="fa-solid fa-triangle-exclamation text-yellow-500 mr-1.5"></i> This tool does not provide medical diagnosis. Always consult a healthcare professional.</p>
         </div>
     </footer>
 
+    <script>
+        // Align localStorage session ID with the logged-in user account
+        const loggedInUserId = "{{ user_id }}";
+        if (loggedInUserId) {
+            localStorage.setItem('swasthya_user_id', loggedInUserId);
+            localStorage.setItem('swasthya_session_id', loggedInUserId);
+        }
+    </script>
     <script>
         document.querySelectorAll('.nav-links a').forEach(function(link) {
             if (link.getAttribute('href') === window.location.pathname) {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family History - SymtoAI</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         .navbar {
@@ -214,17 +215,15 @@
         </h1>
         
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-700 mb-4 section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
-                    </svg>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+                    <i class="fa-solid fa-user-plus text-blue-600 mr-2"></i>
                     Add Family Member
                 </h3>
                 <form id="family-form" class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Relation</label>
-                        <select id="relation" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">Relation</label>
+                        <select id="relation" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:bg-white text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-150">
                             <option value="father">Father</option>
                             <option value="mother">Mother</option>
                             <option value="grandfather">Grandfather</option>
@@ -235,8 +234,8 @@
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Medical Conditions</label>
-                        <select id="condition" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">Medical Conditions</label>
+                        <select id="condition" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:bg-white text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-150">
                             <option value="diabetes">Diabetes</option>
                             <option value="hypertension">Hypertension</option>
                             <option value="heart_disease">Heart Disease</option>
@@ -250,20 +249,16 @@
                         </select>
                     </div>
                     
-                    <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                        </svg>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2.5 rounded-lg hover:bg-blue-700 transition-all duration-200 flex items-center justify-center gap-2 font-medium shadow-sm hover:shadow-md">
+                        <i class="fa-solid fa-plus"></i>
                         Add Family History
                     </button>
                 </form>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-700 mb-4 section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                    </svg>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+                    <i class="fa-solid fa-folder-open text-blue-600 mr-2"></i>
                     Family History Records
                 </h3>
                 <div id="family-records" class="space-y-3">
@@ -273,6 +268,14 @@
         </div>
     </div>
 
+    <script>
+        // Align localStorage session ID with the logged-in user account
+        const loggedInUserId = "{{ user_id }}";
+        if (loggedInUserId) {
+            localStorage.setItem('swasthya_user_id', loggedInUserId);
+            localStorage.setItem('swasthya_session_id', loggedInUserId);
+        }
+    </script>
     <script src="{{ url_for('static', filename='js/family.js') }}"></script>
     <script>
         document.querySelectorAll('.nav-links a').forEach(function(link) {

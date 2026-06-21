@@ -1,1 +1,20 @@
-{}
+{
+  "user_1782043808854": {
+    "father": [
+      "diabetes"
+    ],
+    "grandfather": [
+      "diabetes"
+    ]
+  },
+  "user_20260621_203856": {
+    "father": [
+      "diabetes"
+    ]
+  },
+  "user_20260621_210648": {
+    "mother": [
+      "hypertension"
+    ]
+  }
+}

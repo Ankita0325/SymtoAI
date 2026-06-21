@@ -1,1 +1,372 @@
-{}
+{
+  "user_1782043808854": {
+    "patient_id": "user_1782043808854",
+    "created_at": "2026-06-21T17:41:20.203659",
+    "visits": [
+      {
+        "date": "2026-06-21T17:41:20.203659",
+        "report": {
+          "patient_id": "user_1782043808854",
+          "date": "2026-06-21T17:41:20.202726",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T17:40:40.412017",
+              "message": "i m having vommiting issue from 5 days",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T17:41:06.556947",
+              "message": "i have gain weight 7 kgs more",
+              "symptoms": {}
+            }
+          ],
+          "family_history": {
+            "father": [
+              "diabetes"
+            ],
+            "grandfather": [
+              "diabetes"
+            ]
+          },
+          "conversation": [
+            {
+              "role": "user",
+              "content": "i m having vommiting issue from 5 days",
+              "timestamp": "2026-06-21T17:40:39.830513"
+            },
+            {
+              "role": "assistant",
+              "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you haven't mentioned any specific symptoms\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Could you describe how you're feeling in more detail?\n\u2022 When did you first notice any changes in your health?\n\u2022 Do you have any other symptoms to share?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Please describe your symptoms with details like duration and severity\n\u2022 Include any family history that might be relevant\n",
+              "timestamp": "2026-06-21T17:40:40.412017"
+            },
+            {
+              "role": "user",
+              "content": "i have gain weight 7 kgs more",
+              "timestamp": "2026-06-21T17:41:06.405069"
+            },
+            {
+              "role": "assistant",
+              "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you haven't mentioned any specific symptoms\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Could you describe how you're feeling in more detail?\n\u2022 When did you first notice any changes in your health?\n\u2022 Do you have any other symptoms to share?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Please describe your symptoms with details like duration and severity\n\u2022 Include any family history that might be relevant\n",
+              "timestamp": "2026-06-21T17:41:06.492556"
+            }
+          ],
+          "diagnosis": {
+            "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n",
+            "conditions": [
+              "Gastrointestinal issue",
+              "Infection",
+              "Inflammatory condition"
+            ],
+            "risk_level": "Moderate"
+          },
+          "risk_score": 30,
+          "risk_level": "Low",
+          "risk_factors": [
+            "diabetes in father",
+            "diabetes in grandfather"
+          ],
+          "recommendations": "Continue monitoring your symptoms. Consider consulting a doctor if symptoms persist or worsen.",
+          "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n"
+        }
+      },
+      {
+        "date": "2026-06-21T17:41:29.439620",
+        "report": {
+          "patient_id": "user_1782043808854",
+          "date": "2026-06-21T17:41:29.376413",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T17:40:40.412017",
+              "message": "i m having vommiting issue from 5 days",
+              "symptoms": {
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            },
+            {
+              "timestamp": "2026-06-21T17:41:06.556947",
+              "message": "i have gain weight 7 kgs more",
+              "symptoms": {}
+            }
+          ],
+          "family_history": {
+            "father": [
+              "diabetes"
+            ],
+            "grandfather": [
+              "diabetes"
+            ]
+          },
+          "conversation": [
+            {
+              "role": "user",
+              "content": "i m having vommiting issue from 5 days",
+              "timestamp": "2026-06-21T17:40:39.830513"
+            },
+            {
+              "role": "assistant",
+              "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you haven't mentioned any specific symptoms\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Could you describe how you're feeling in more detail?\n\u2022 When did you first notice any changes in your health?\n\u2022 Do you have any other symptoms to share?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Please describe your symptoms with details like duration and severity\n\u2022 Include any family history that might be relevant\n",
+              "timestamp": "2026-06-21T17:40:40.412017"
+            },
+            {
+              "role": "user",
+              "content": "i have gain weight 7 kgs more",
+              "timestamp": "2026-06-21T17:41:06.405069"
+            },
+            {
+              "role": "assistant",
+              "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you haven't mentioned any specific symptoms\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Could you describe how you're feeling in more detail?\n\u2022 When did you first notice any changes in your health?\n\u2022 Do you have any other symptoms to share?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Please describe your symptoms with details like duration and severity\n\u2022 Include any family history that might be relevant\n",
+              "timestamp": "2026-06-21T17:41:06.492556"
+            }
+          ],
+          "diagnosis": {
+            "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n",
+            "conditions": [
+              "Gastrointestinal issue",
+              "Infection",
+              "Inflammatory condition"
+            ],
+            "risk_level": "Moderate"
+          },
+          "risk_score": 30,
+          "risk_level": "Low",
+          "risk_factors": [
+            "diabetes in father",
+            "diabetes in grandfather"
+          ],
+          "recommendations": "Continue monitoring your symptoms. Consider consulting a doctor if symptoms persist or worsen.",
+          "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n"
+        }
+      }
+    ],
+    "last_visit": "2026-06-21T17:41:29.439620"
+  },
+  "user_20260621_174001": {
+    "patient_id": "user_20260621_174001",
+    "created_at": "2026-06-21T20:23:27.706389",
+    "visits": [
+      {
+        "date": "2026-06-21T20:23:27.706389",
+        "report": {
+          "patient_id": "user_20260621_174001",
+          "date": "2026-06-21T20:23:27.695459",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T20:23:25.090678",
+              "message": "i have fever from 5 day",
+              "symptoms": {
+                "fever": true,
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            }
+          ],
+          "family_history": {},
+          "conversation": [
+            {
+              "role": "user",
+              "content": "i have fever from 5 day",
+              "timestamp": "2026-06-21T20:23:22.633320"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 You've been experiencing a fever for 5 days, which is a significant duration.\n\u2022 It's essential to take this symptom seriously and gather more information.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you please tell me what your temperature has been, and have you noticed any other symptoms like headache, body aches, or cough?\n\u2022 Have you taken any medications to try to reduce your fever, and if so, have they been effective?\n\u2022 Have you recently traveled or been exposed to anyone who has been sick?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 A prolonged fever can be a sign of an underlying infection or illness that needs medical attention.\n\u2022 Possible considerations include pneumonia, influenza, or other viral or bacterial infections.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 I strongly recommend that you consult a healthcare professional for a thorough evaluation and guidance.\n\u2022 They will be able to assess your condition, provide a proper diagnosis, and recommend appropriate treatment.\n\u2022 Do not attempt to treat your fever with home remedies; instead, seek medical attention.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 You should seek medical help today, as a prolonged fever can lead to more severe complications if left untreated.\n\u2022 If you experience any emergency warning signs such as difficulty breathing, chest pain, or severe headache, seek immediate attention.\n\u2022 Remember, this is not a medical diagnosis. Please consult a healthcare professional.",
+              "timestamp": "2026-06-21T20:23:25.060763"
+            }
+          ],
+          "diagnosis": {
+            "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days\n\u2022 No other symptoms reported\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 No family history provided\n\u2022 No genetic risk implications reported\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Pneumonia\n2. Influenza\n3. Viral or bacterial infections\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: HIGH\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Prolonged fever duration (5 days)\n  - Potential for underlying infection or illness\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional for a thorough evaluation and guidance\n2. Provide a detailed medical history, including the duration and severity of the fever\n3. Discuss any recent travel or exposure to sick individuals\n4. Follow the healthcare professional's recommendations for treatment and follow-up care\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Difficulty breathing\n\u2022 Chest pain\n\u2022 Severe headache\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare professional as soon as possible\n\u2022 Be prepared to provide a detailed medical history and answer questions about symptoms and recent activities\n\u2022 Follow the healthcare professional's recommendations for treatment and follow-up care\n\nThis is not a medical diagnosis. Consult a healthcare professional.",
+            "conditions": [
+              "Pneumonia",
+              "Influenza",
+              "Viral or bacterial infections"
+            ],
+            "risk_level": "High"
+          },
+          "risk_score": 22.5,
+          "risk_level": "Minimal",
+          "risk_factors": [
+            "fever (persistent - 5 days)"
+          ],
+          "recommendations": "Your current risk appears minimal. Continue maintaining a healthy lifestyle and monitor any changes.",
+          "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days\n\u2022 No other symptoms reported\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 No family history provided\n\u2022 No genetic risk implications reported\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Pneumonia\n2. Influenza\n3. Viral or bacterial infections\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: HIGH\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Prolonged fever duration (5 days)\n  - Potential for underlying infection or illness\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional for a thorough evaluation and guidance\n2. Provide a detailed medical history, including the duration and severity of the fever\n3. Discuss any recent travel or exposure to sick individuals\n4. Follow the healthcare professional's recommendations for treatment and follow-up care\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Difficulty breathing\n\u2022 Chest pain\n\u2022 Severe headache\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare professional as soon as possible\n\u2022 Be prepared to provide a detailed medical history and answer questions about symptoms and recent activities\n\u2022 Follow the healthcare professional's recommendations for treatment and follow-up care\n\nThis is not a medical diagnosis. Consult a healthcare professional."
+        }
+      },
+      {
+        "date": "2026-06-21T20:32:12.201543",
+        "report": {
+          "patient_id": "user_20260621_174001",
+          "date": "2026-06-21T20:32:12.184900",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T20:23:25.090678",
+              "message": "i have fever from 5 day",
+              "symptoms": {
+                "fever": true,
+                "duration": 5,
+                "duration_unit": "days"
+              }
+            }
+          ],
+          "family_history": {},
+          "conversation": [
+            {
+              "role": "user",
+              "content": "i have fever from 5 day",
+              "timestamp": "2026-06-21T20:23:22.633320"
+            },
+            {
+              "role": "assistant",
+              "content": "\ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 You've been experiencing a fever for 5 days, which is a significant duration.\n\u2022 It's essential to take this symptom seriously and gather more information.\n\n\ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you please tell me what your temperature has been, and have you noticed any other symptoms like headache, body aches, or cough?\n\u2022 Have you taken any medications to try to reduce your fever, and if so, have they been effective?\n\u2022 Have you recently traveled or been exposed to anyone who has been sick?\n\n\ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\udde6\ud835\udddc\ud835\uddd7\ud835\uddd8\ud835\udde5\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 A prolonged fever can be a sign of an underlying infection or illness that needs medical attention.\n\u2022 Possible considerations include pneumonia, influenza, or other viral or bacterial infections.\n\n\ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 I strongly recommend that you consult a healthcare professional for a thorough evaluation and guidance.\n\u2022 They will be able to assess your condition, provide a proper diagnosis, and recommend appropriate treatment.\n\u2022 Do not attempt to treat your fever with home remedies; instead, seek medical attention.\n\n\ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 You should seek medical help today, as a prolonged fever can lead to more severe complications if left untreated.\n\u2022 If you experience any emergency warning signs such as difficulty breathing, chest pain, or severe headache, seek immediate attention.\n\u2022 Remember, this is not a medical diagnosis. Please consult a healthcare professional.",
+              "timestamp": "2026-06-21T20:23:25.060763"
+            }
+          ],
+          "diagnosis": {
+            "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days, severity unknown\n\u2022 No other symptoms reported\n\u2022 No additional information on duration or severity of symptoms\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 No family history provided\n\u2022 No genetic risk implications available\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Influenza\n2. Pneumonia\n3. Viral or bacterial infections\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: HIGH\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Prolonged fever (5 days)\n  - Unknown severity of symptoms\n  - Potential for underlying infection or illness\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional for a thorough evaluation and guidance\n2. Provide a detailed medical history, including any recent travel or exposure to sick individuals\n3. Discuss potential treatment options, such as antiviral or antibiotic medications\n4. Follow the healthcare professional's recommendations for further testing or treatment\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Difficulty breathing\n\u2022 Chest pain\n\u2022 Severe headache\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare professional as soon as possible\n\u2022 Be prepared to provide detailed information about symptoms and medical history\n\u2022 Follow the healthcare professional's recommendations for treatment and follow-up care\n\nThis is not a medical diagnosis. Consult a healthcare professional.",
+            "conditions": [
+              "Influenza",
+              "Pneumonia",
+              "Viral or bacterial infections"
+            ],
+            "risk_level": "High"
+          },
+          "risk_score": 22.5,
+          "risk_level": "Minimal",
+          "risk_factors": [
+            "fever (persistent - 5 days)"
+          ],
+          "recommendations": "Your current risk appears minimal. Continue maintaining a healthy lifestyle and monitor any changes.",
+          "summary": "========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Fever: 5 days, severity unknown\n\u2022 No other symptoms reported\n\u2022 No additional information on duration or severity of symptoms\n\n\ud83e\uddec \ud835\uddd9\ud835\uddd4\ud835\udde0\ud835\udddc\ud835\udddf\ud835\uddec \ud835\udddb\ud835\udddc\ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde5\ud835\uddec \ud835\uddd4\ud835\udde1\ud835\uddd4\ud835\udddf\ud835\uddec\ud835\udde6\ud835\udddc\ud835\udde6\n\u2022 No family history provided\n\u2022 No genetic risk implications available\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6 (\ud835\uddf9\ud835\uddf6\ud835\ude00\ud835\ude01\ud835\uddf2\ud835\uddf1 \ud835\uddf3\ud835\uddff\ud835\uddfc\ud835\uddfa \ud835\uddfa\ud835\uddfc\ud835\ude00\ud835\ude01 \ud835\ude01\ud835\uddfc \ud835\uddf9\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\ude01 \ud835\uddf9\ud835\uddf6\ud835\uddf8\ud835\uddf2\ud835\uddf9\ud835\ude06)\n1. Influenza\n2. Pneumonia\n3. Viral or bacterial infections\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: HIGH\n\u2022 Risk Score: 80/100\n\u2022 Key Risk Factors:\n  - Prolonged fever (5 days)\n  - Unknown severity of symptoms\n  - Potential for underlying infection or illness\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional for a thorough evaluation and guidance\n2. Provide a detailed medical history, including any recent travel or exposure to sick individuals\n3. Discuss potential treatment options, such as antiviral or antibiotic medications\n4. Follow the healthcare professional's recommendations for further testing or treatment\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddc\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\uddd7\ud835\udddc\ud835\uddd4\ud835\udde7\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 Difficulty breathing\n\u2022 Chest pain\n\u2022 Severe headache\n\n\ud83d\udccb \ud835\udde1\ud835\uddd8\ud835\uddeb\ud835\udde7 \ud835\udde6\ud835\udde7\ud835\uddd8\ud835\udde3\ud835\udde6\n\u2022 Schedule an appointment with a healthcare professional as soon as possible\n\u2022 Be prepared to provide detailed information about symptoms and medical history\n\u2022 Follow the healthcare professional's recommendations for treatment and follow-up care\n\nThis is not a medical diagnosis. Consult a healthcare professional."
+        }
+      }
+    ],
+    "last_visit": "2026-06-21T20:32:12.201543"
+  },
+  "user_20260621_203856": {
+    "patient_id": "user_20260621_203856",
+    "created_at": "2026-06-21T20:40:46.617107",
+    "visits": [
+      {
+        "date": "2026-06-21T20:40:46.617107",
+        "report": {
+          "patient_id": "user_20260621_203856",
+          "date": "2026-06-21T20:40:46.561250",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T20:40:25.511907",
+              "message": "I have fever, cough, and severe headache for 3 days.",
+              "symptoms": {
+                "fever": true,
+                "cough": true,
+                "headache": true,
+                "duration": 3,
+                "duration_unit": "days",
+                "severity": 2.0
+              }
+            }
+          ],
+          "family_history": {
+            "father": [
+              "diabetes"
+            ]
+          },
+          "conversation": [
+            {
+              "role": "user",
+              "content": "I have fever, cough, and severe headache for 3 days.",
+              "timestamp": "2026-06-21T20:40:25.389519"
+            },
+            {
+              "role": "assistant",
+              "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, headache\n\u2022 Duration: 3 days\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Consider scheduling a doctor consultation\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen or persist\n\u2022 If you experience severe pain or difficulty breathing\n",
+              "timestamp": "2026-06-21T20:40:25.504969"
+            }
+          ],
+          "diagnosis": {
+            "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n",
+            "conditions": [
+              "Gastrointestinal issue",
+              "Infection",
+              "Inflammatory condition"
+            ],
+            "risk_level": "Moderate"
+          },
+          "risk_score": 100,
+          "risk_level": "Critical",
+          "risk_factors": [
+            "\ud83d\udea8 sudden headache (Critical - requires immediate attention)",
+            "\u26a0\ufe0f Combined risk: fever + cough",
+            "diabetes in father",
+            "Severity level: 2.0x"
+          ],
+          "recommendations": "\ud83d\udea8 **URGENT: Immediate medical attention required**\n\ud83d\udc68\u200d\u2695\ufe0f **Recommended specialist: NEUROLOGY**\n\u26a0\ufe0f This assessment is not a medical diagnosis. Always consult a qualified healthcare professional.",
+          "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n"
+        }
+      }
+    ],
+    "last_visit": "2026-06-21T20:40:46.617107"
+  },
+  "user_20260621_210648": {
+    "patient_id": "user_20260621_210648",
+    "created_at": "2026-06-21T21:09:19.951912",
+    "visits": [
+      {
+        "date": "2026-06-21T21:09:19.951912",
+        "report": {
+          "patient_id": "user_20260621_210648",
+          "date": "2026-06-21T21:09:19.935348",
+          "symptoms": [
+            {
+              "timestamp": "2026-06-21T21:09:03.130441",
+              "message": "I have a high fever, idry cough, and shortness of breath.",
+              "symptoms": {
+                "fever": true,
+                "cough": true,
+                "shortness of breath": true
+              }
+            }
+          ],
+          "family_history": {
+            "mother": [
+              "hypertension"
+            ]
+          },
+          "conversation": [
+            {
+              "role": "user",
+              "content": "I have a high fever, idry cough, and shortness of breath.",
+              "timestamp": "2026-06-21T21:09:03.036517"
+            },
+            {
+              "role": "assistant",
+              "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, shortness of breath\n\u2022 Duration: not specified days\n\n\ud83d\udea8 **\u26a0\ufe0f CRITICAL SYMPTOM DETECTED**\n\u2022 Please seek medical attention immediately\n\u2022 Do not rely on this AI assessment for diagnosis\n\u2022 This requires evaluation by a healthcare professional\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Seek immediate medical attention\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 TODAY - This requires medical evaluation\n\u2022 If you experience severe pain or difficulty breathing\n",
+              "timestamp": "2026-06-21T21:09:03.119565"
+            }
+          ],
+          "diagnosis": {
+            "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n",
+            "conditions": [
+              "Gastrointestinal issue",
+              "Infection",
+              "Inflammatory condition"
+            ],
+            "risk_level": "Moderate"
+          },
+          "risk_score": 91,
+          "risk_level": "Critical",
+          "risk_factors": [
+            "\ud83d\udea8 shortness of breath (Critical - requires immediate attention)",
+            "\u26a0\ufe0f Combined risk: fever + cough",
+            "hypertension in mother"
+          ],
+          "recommendations": "\ud83d\udea8 **URGENT: Immediate medical attention required**\n\ud83d\ude91 If chest pain is severe or radiating, call emergency services\n\ud83d\udc8a Do not drive yourself to the hospital\n\ud83d\udc68\u200d\u2695\ufe0f **Recommended specialist: PULMONOLOGY**\n\u26a0\ufe0f This assessment is not a medical diagnosis. Always consult a qualified healthcare professional.",
+          "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n"
+        }
+      }
+    ],
+    "last_visit": "2026-06-21T21:09:19.951912"
+  }
+}

@@ -146,31 +146,31 @@ def get_user(user_id):
 def index():
     if not session.get('logged_in'):
         return redirect(url_for('login_page'))
-    return render_template('index.html', username=session.get('username'))
+    return render_template('index.html', username=session.get('username'), user_id=session.get('user_id'))
 
 @app.route('/chat')
 def chat():
     if not session.get('logged_in'):
         return redirect(url_for('login_page'))
-    return render_template('chat.html', username=session.get('username'))
+    return render_template('chat.html', username=session.get('username'), user_id=session.get('user_id'))
 
 @app.route('/dashboard')
 def dashboard():
     if not session.get('logged_in'):
         return redirect(url_for('login_page'))
-    return render_template('dashboard.html', username=session.get('username'))
+    return render_template('dashboard.html', username=session.get('username'), user_id=session.get('user_id'))
 
 @app.route('/family-history')
 def family_history():
     if not session.get('logged_in'):
         return redirect(url_for('login_page'))
-    return render_template('family_history.html', username=session.get('username'))
+    return render_template('family_history.html', username=session.get('username'), user_id=session.get('user_id'))
 
 @app.route('/reports')
 def reports():
     if not session.get('logged_in'):
         return redirect(url_for('login_page'))
-    return render_template('reports.html', username=session.get('username'))
+    return render_template('reports.html', username=session.get('username'), user_id=session.get('user_id'))
 
 # ============================================================
 # QR CODE ROUTES
@@ -193,7 +193,11 @@ def generate_report_qr(report_id):
     
     patient_id = report.get('patient_id')
     all_users = load_json(USERS_FILE)
-    user_data = all_users.get(patient_id, {})
+    user_data = all_users.get(patient_id)
+    if not user_data and session.get('user_id'):
+        user_data = all_users.get(session.get('user_id'), {})
+    else:
+        user_data = user_data or {}
     
     qr_data = {
         'report_id': report_id,
@@ -286,12 +290,11 @@ def view_report(report_id):
     print(f"👁️ Viewing report: {report_id}")
     
     encoded_data = request.args.get('data')
-    
+    qr_data = {}
     if encoded_data:
         try:
             qr_data_json = base64.b64decode(encoded_data).decode()
             qr_data = json.loads(qr_data_json)
-            return render_template('report_view_detailed.html', report_id=report_id, report_data=qr_data)
         except Exception as e:
             print(f"❌ QR decode error: {e}")
     
@@ -299,24 +302,30 @@ def view_report(report_id):
     report = all_reports.get(report_id)
     
     if not report:
+        if qr_data:
+            return render_template('report_view_detailed.html', report_id=report_id, report_data=qr_data)
         return render_template('report_not_found.html'), 404
     
     patient_id = report.get('patient_id')
     all_users = load_json(USERS_FILE)
     user_data = all_users.get(patient_id, {})
     
+    # Resolve name/email: database first, then URL data, then defaults
+    patient_name = user_data.get('username') or qr_data.get('patient_name') or 'Unknown'
+    patient_email = user_data.get('email') or qr_data.get('patient_email') or 'N/A'
+    
     report_data = {
         'report_id': report_id,
         'patient_id': patient_id,
-        'patient_name': user_data.get('username', 'Unknown'),
-        'patient_email': user_data.get('email', 'N/A'),
+        'patient_name': patient_name,
+        'patient_email': patient_email,
         'report_date': report.get('date', 'N/A'),
         'risk_level': report.get('risk_level', 'N/A'),
         'risk_score': report.get('risk_score', 0),
         'risk_factors': report.get('risk_factors', []),
         'symptoms': report.get('symptoms', []),
         'family_history': report.get('family_history', {}),
-        'conditions': report.get('diagnosis', {}).get('conditions', []),
+        'conditions': report.get('conditions') or report.get('diagnosis', {}).get('conditions', []),
         'recommendations': report.get('recommendations', ''),
         'summary': report.get('summary', '')
     }

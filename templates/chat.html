@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - SymtoAI</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         .navbar {
@@ -155,7 +156,7 @@
 
     <div class="container mx-auto px-6 py-8">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl font-bold text-blue-600 mb-6">💬 Health Chat Assistant</h1>
+            <h1 class="text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2"><i class="fa-solid fa-comment-medical"></i> Health Chat Assistant</h1>
             
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div id="chat-messages" class="h-96 overflow-y-auto p-6 bg-gray-50">
@@ -180,12 +181,12 @@
                     </div>
                     <div class="flex space-x-2 mt-3">
                         <button onclick="analyzeRisk()" id="analyze-btn" 
-                                class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
-                            📊 Get Diagnosis
+                                class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm flex items-center gap-1.5 font-medium shadow-sm">
+                            <i class="fa-solid fa-square-poll-vertical"></i> Get Diagnosis
                         </button>
                         <button onclick="resetConversation()" id="reset-btn" 
-                                class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition text-sm">
-                            🔄 Reset
+                                class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition text-sm flex items-center gap-1.5 font-medium shadow-sm">
+                            <i class="fa-solid fa-rotate-left"></i> Reset
                         </button>
                     </div>
                 </div>
@@ -210,6 +211,14 @@
         </div>
     </div>
 
+    <script>
+        // Align localStorage session ID with the logged-in user account
+        const loggedInUserId = "{{ user_id }}";
+        if (loggedInUserId) {
+            localStorage.setItem('swasthya_user_id', loggedInUserId);
+            localStorage.setItem('swasthya_session_id', loggedInUserId);
+        }
+    </script>
     <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
     <script>
         document.querySelectorAll('.nav-links a').forEach(function(link) {

@@ -1,1 +1,53 @@
-{}
+{
+  "user_1782043808854": [
+    {
+      "timestamp": "2026-06-21T17:40:40.412017",
+      "message": "i m having vommiting issue from 5 days",
+      "symptoms": {
+        "duration": 5,
+        "duration_unit": "days"
+      }
+    },
+    {
+      "timestamp": "2026-06-21T17:41:06.556947",
+      "message": "i have gain weight 7 kgs more",
+      "symptoms": {}
+    }
+  ],
+  "user_20260621_174001": [
+    {
+      "timestamp": "2026-06-21T20:23:25.090678",
+      "message": "i have fever from 5 day",
+      "symptoms": {
+        "fever": true,
+        "duration": 5,
+        "duration_unit": "days"
+      }
+    }
+  ],
+  "user_20260621_203856": [
+    {
+      "timestamp": "2026-06-21T20:40:25.511907",
+      "message": "I have fever, cough, and severe headache for 3 days.",
+      "symptoms": {
+        "fever": true,
+        "cough": true,
+        "headache": true,
+        "duration": 3,
+        "duration_unit": "days",
+        "severity": 2.0
+      }
+    }
+  ],
+  "user_20260621_210648": [
+    {
+      "timestamp": "2026-06-21T21:09:03.130441",
+      "message": "I have a high fever, idry cough, and shortness of breath.",
+      "symptoms": {
+        "fever": true,
+        "cough": true,
+        "shortness of breath": true
+      }
+    }
+  ]
+}

@@ -59,9 +59,12 @@ async function loadFamilyHistory() {
         const container = document.getElementById('family-records');
         if (container) {
             container.innerHTML = `
-                <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
-                    <p class="text-red-600">⚠️ Error loading family history.</p>
-                    <p class="text-red-500 text-sm">Please refresh the page and try again.</p>
+                <div class="bg-red-50 border border-red-200 p-4 rounded-lg flex items-start gap-2">
+                    <i class="fa-solid fa-triangle-exclamation text-red-600 mt-0.5"></i>
+                    <div>
+                        <p class="text-red-600 font-semibold text-sm">Error loading family history.</p>
+                        <p class="text-red-500 text-sm">Please refresh the page and try again.</p>
+                    </div>
                 </div>
             `;
         }
@@ -114,9 +117,9 @@ function displayFamilyHistory(data) {
                     </div>
                 </div>
                 <button onclick="removeRelation('${relation}')" 
-                        class="text-red-500 hover:text-red-700 px-2 py-1 hover:bg-red-50 rounded transition"
+                        class="text-red-500 hover:text-red-700 px-2 py-1 hover:bg-red-50 rounded transition flex items-center justify-center"
                         title="Remove ${relation}">
-                    ✕
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
         `;
@@ -181,7 +184,7 @@ async function addFamilyHistory() {
             await loadFamilyHistory();
             
             // Show success message
-            showNotification(`✅ ${relation}: ${condition} added successfully!`, 'success');
+            showNotification(`${relation}: ${condition} added successfully!`, 'success');
             
             // Reset form to default values
             document.getElementById('relation').value = 'father';
@@ -227,7 +230,7 @@ async function removeRelation(relation) {
         
         if (response.ok) {
             await loadFamilyHistory();
-            showNotification(`✅ ${relation} removed successfully!`, 'success');
+            showNotification(`${relation} removed successfully!`, 'success');
         } else {
             showNotification('❌ Error removing: ' + (result.message || 'Failed to remove'), 'error');
         }
@@ -244,25 +247,25 @@ async function removeRelation(relation) {
 
 function showNotification(message, type = 'success') {
     const colors = {
-        success: 'bg-green-50 border-green-500 text-green-700',
-        error: 'bg-red-50 border-red-500 text-red-700',
-        warning: 'bg-yellow-50 border-yellow-500 text-yellow-700',
-        info: 'bg-blue-50 border-blue-500 text-blue-700'
+        success: 'bg-green-50 border-green-200 text-green-800 shadow-md',
+        error: 'bg-red-50 border-red-200 text-red-800 shadow-md',
+        warning: 'bg-yellow-50 border-yellow-200 text-yellow-800 shadow-md',
+        info: 'bg-blue-50 border-blue-200 text-blue-800 shadow-md'
     };
     
-    const icon = {
-        success: '✅',
-        error: '❌',
-        warning: '⚠️',
-        info: 'ℹ️'
+    const icons = {
+        success: '<i class="fa-solid fa-circle-check text-green-600"></i>',
+        error: '<i class="fa-solid fa-circle-xmark text-red-600"></i>',
+        warning: '<i class="fa-solid fa-triangle-exclamation text-yellow-600"></i>',
+        info: '<i class="fa-solid fa-circle-info text-blue-600"></i>'
     };
     
     const div = document.createElement('div');
-    div.className = `fixed top-4 right-4 px-4 py-3 rounded-lg border ${colors[type] || colors.info} z-50 shadow-lg max-w-md transition-all duration-500`;
+    div.className = `fixed top-4 right-4 px-4 py-3 rounded-lg border ${colors[type] || colors.info} z-50 shadow-lg max-w-md transition-all duration-300`;
     div.innerHTML = `
-        <div class="flex items-center space-x-2">
-            <span class="text-xl">${icon[type] || 'ℹ️'}</span>
-            <span>${message}</span>
+        <div class="flex items-center space-x-3">
+            <span class="text-lg">${icons[type] || ''}</span>
+            <span class="font-medium text-sm">${message}</span>
         </div>
     `;
     document.body.appendChild(div);
@@ -318,7 +321,7 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
         console.log('🔄 Manual refresh triggered');
         loadFamilyHistory();
-        showNotification('🔄 Family history refreshed!', 'info');
+        showNotification('Family history refreshed!', 'info');
     }
 });
 

@@ -163,7 +163,7 @@ function updateSymptoms(data) {
     if (symptoms.duration) {
         const durationTag = document.createElement('span');
         durationTag.className = 'symptom-tag bg-yellow-100 text-yellow-800';
-        durationTag.textContent = `⏱ ${symptoms.duration} ${symptoms.duration_unit || 'days'}`;
+        durationTag.innerHTML = `<i class="fa-solid fa-clock text-yellow-600 mr-1"></i> ${symptoms.duration} ${symptoms.duration_unit || 'days'}`;
         container.appendChild(durationTag);
     }
     
@@ -181,7 +181,7 @@ function updateFamilyHistory(data) {
     if (Object.keys(familyHistory).length === 0) {
         container.innerHTML = `
             <p class="text-gray-500">No family history recorded.</p>
-            <a href="/family-history" class="text-blue-600 hover:text-blue-800 text-sm">➕ Add Family History</a>
+            <a href="/family-history" class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1 mt-1"><i class="fa-solid fa-plus-circle"></i> Add Family History</a>
         `;
         return;
     }
@@ -197,7 +197,7 @@ function updateFamilyHistory(data) {
         `;
     }
     html += '</div>';
-    html += `<a href="/family-history" class="text-blue-600 hover:text-blue-800 text-sm mt-2 inline-block">✏️ Edit Family History</a>`;
+    html += `<a href="/family-history" class="text-blue-600 hover:text-blue-800 text-sm mt-3 inline-flex items-center gap-1"><i class="fa-solid fa-pen-to-square"></i> Edit Family History</a>`;
     
     container.innerHTML = html;
 }
@@ -225,44 +225,44 @@ function updateDiagnosis(data) {
     const reportId = report.report_id || 'report_' + Date.now();
     
     let html = `
-        <div class="bg-gray-50 p-4 rounded-lg">
+        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
             <div class="flex justify-between items-start mb-4 flex-wrap gap-2">
-                <h4 class="font-semibold text-gray-700">📊 Diagnosis Summary</h4>
-                <span class="text-xs text-gray-400">#${reportId}</span>
+                <h4 class="font-semibold text-gray-700 flex items-center"><i class="fa-solid fa-clipboard-check text-blue-600 mr-2"></i> Diagnosis Summary</h4>
+                <span class="text-xs font-mono bg-gray-200 text-gray-600 px-2 py-0.5 rounded">#${reportId}</span>
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">📊 Symptoms</h4>
+                <h4 class="font-semibold text-gray-700 flex items-center mb-1"><i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Symptoms</h4>
                 ${report.symptoms && report.symptoms.length > 0 
-                    ? report.symptoms.map(s => `<div class="bullet-item">• ${s.message}</div>`).join('')
-                    : '<p class="text-gray-500">No symptoms recorded.</p>'
+                    ? report.symptoms.map(s => `<div class="bullet-item">${s.message}</div>`).join('')
+                    : '<p class="text-gray-500 text-sm">No symptoms recorded.</p>'
                 }
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">🧬 Family History</h4>
+                <h4 class="font-semibold text-gray-700 flex items-center mb-1"><i class="fa-solid fa-dna text-blue-600 mr-2"></i> Family History</h4>
                 ${report.family_history && Object.keys(report.family_history).length > 0
                     ? Object.entries(report.family_history).map(([rel, conds]) => 
-                        `<div class="bullet-item">• ${rel}: ${conds.join(', ').replace(/_/g, ' ')}</div>`
+                        `<div class="bullet-item"><span class="capitalize font-medium text-gray-800">${rel}</span>: ${conds.join(', ').replace(/_/g, ' ')}</div>`
                       ).join('')
-                    : '<p class="text-gray-500">No family history recorded.</p>'
+                    : '<p class="text-gray-500 text-sm">No family history recorded.</p>'
                 }
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">🏥 Conditions</h4>
+                <h4 class="font-semibold text-gray-700 flex items-center mb-1"><i class="fa-solid fa-stethoscope text-blue-600 mr-2"></i> Conditions</h4>
                 ${report.diagnosis && report.diagnosis.conditions && report.diagnosis.conditions.length > 0
                     ? report.diagnosis.conditions.map((c, i) => 
                         `<div class="numbered-item"><span class="number">${i+1}.</span> ${c}</div>`
                       ).join('')
-                    : '<p class="text-gray-500">No conditions identified.</p>'
+                    : '<p class="text-gray-500 text-sm">No conditions identified.</p>'
                 }
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">📊 Risk</h4>
-                <div class="bullet-item">• Risk Level: <span class="font-bold ${report.risk_level === 'High' ? 'text-red-600' : report.risk_level === 'Moderate' ? 'text-yellow-600' : 'text-green-600'}">${report.risk_level}</span></div>
-                <div class="bullet-item">• Risk Score: ${report.risk_score}/100</div>
+                <h4 class="font-semibold text-gray-700 flex items-center mb-1"><i class="fa-solid fa-triangle-exclamation text-blue-600 mr-2"></i> Risk</h4>
+                <div class="bullet-item">Risk Level: <span class="font-bold ${report.risk_level === 'High' ? 'text-red-600' : report.risk_level === 'Moderate' ? 'text-yellow-600' : 'text-green-600'}">${report.risk_level}</span></div>
+                <div class="bullet-item">Risk Score: ${report.risk_score}/100</div>
                 ${report.risk_factors && report.risk_factors.length > 0
                     ? report.risk_factors.map(f => `<div class="bullet-item" style="padding-left:24px;">- ${f}</div>`).join('')
                     : ''
@@ -270,25 +270,25 @@ function updateDiagnosis(data) {
             </div>
             
             <div class="mb-4">
-                <h4 class="font-semibold text-gray-700">💊 Recommendations</h4>
+                <h4 class="font-semibold text-gray-700 flex items-center mb-1"><i class="fa-solid fa-pills text-blue-600 mr-2"></i> Recommendations</h4>
                 ${report.recommendations
                     ? report.recommendations.split('\n').filter(r => r.trim()).map(r => 
-                        `<div class="bullet-item">• ${r.trim()}</div>`
+                        `<div class="bullet-item">${r.trim()}</div>`
                       ).join('')
-                    : '<p class="text-gray-500">No recommendations available.</p>'
+                    : '<p class="text-gray-500 text-sm">No recommendations available.</p>'
                 }
             </div>
             
             <!-- BUTTONS - ONLY ONCE AT THE BOTTOM -->
-            <div class="mt-4 pt-4 border-t border-gray-200">
+            <div class="mt-5 pt-4 border-t border-gray-200">
                 <div class="flex flex-wrap gap-2">
                     <button onclick="generateQRCode('${reportId}')" 
-                            class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm">
-                        📱 Generate QR Code
+                            class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-qrcode"></i> Generate QR Code
                     </button>
                     <button onclick="window.print()" 
-                            class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm">
-                        🖨️ Print Report
+                            class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-print"></i> Print Report
                     </button>
                 </div>
                 <p class="text-xs text-gray-400 mt-2">QR Code contains patient details and full health report</p>
@@ -351,27 +351,27 @@ function showErrorState() {
 
 async function generateQRCode(reportId) {
     try {
-        console.log('📱 Generating QR code for report:', reportId);
-        showNotification('📱 Generating QR code...', 'info');
+        console.log('Generating QR code for report:', reportId);
+        showNotification('Generating QR code...', 'info');
         
         const response = await fetch(`/api/report/${reportId}/qr`);
-        console.log('📥 QR API Response status:', response.status);
+        console.log('QR API Response status:', response.status);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
-        console.log('📊 QR Data received:', data);
+        console.log('QR Data received:', data);
         
         if (data.qr_code) {
             displayPatientQRCode(data);
         } else {
-            showNotification('❌ Failed to generate QR code - no data', 'error');
+            showNotification('Failed to generate QR code - no data', 'error');
         }
     } catch (error) {
-        console.error('❌ Error generating QR code:', error);
-        showNotification('❌ Error generating QR code: ' + error.message, 'error');
+        console.error('Error generating QR code:', error);
+        showNotification('Error generating QR code: ' + error.message, 'error');
     }
 }
 
@@ -380,11 +380,11 @@ function displayPatientQRCode(data) {
     modal.id = 'qr-modal';
     modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
     modal.innerHTML = `
-        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold text-gray-800">📱 Patient QR Code</h3>
+                <h3 class="text-xl font-bold text-gray-800 flex items-center"><i class="fa-solid fa-qrcode text-purple-600 mr-2"></i> Patient QR Code</h3>
                 <button onclick="closeQRModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
-                    ✕
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             
@@ -407,19 +407,19 @@ function displayPatientQRCode(data) {
             
             <div class="text-center">
                 <p class="text-sm text-gray-600 mb-4">Scan this QR code to view full report</p>
-                <div class="bg-white p-4 rounded-lg inline-block border-2 border-gray-200">
+                <div class="bg-white p-4 rounded-lg inline-block border-2 border-gray-200 shadow-inner">
                     <img src="data:image/png;base64,${data.qr_code}" 
                          alt="QR Code" 
                          class="w-56 h-56 mx-auto">
                 </div>
                 <div class="mt-4 flex flex-wrap gap-2 justify-center">
                     <a href="/api/report/${data.report_id}/qr/download" 
-                       class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">
-                        ⬇️ Download QR
+                       class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm flex items-center gap-1">
+                        <i class="fa-solid fa-download"></i> Download QR
                     </a>
                     <button onclick="shareReport('${data.report_url}')" 
-                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm">
-                        📤 Share
+                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-sm flex items-center gap-1">
+                        <i class="fa-solid fa-share-nodes"></i> Share
                     </button>
                 </div>
             </div>
@@ -454,31 +454,35 @@ function shareReport(reportUrl) {
 
 function showNotification(message, type = 'success') {
     const colors = {
-        success: 'bg-green-100 border-green-500 text-green-700',
-        error: 'bg-red-100 border-red-500 text-red-700',
-        warning: 'bg-yellow-100 border-yellow-500 text-yellow-700',
-        info: 'bg-blue-100 border-blue-500 text-blue-700'
+        success: 'bg-green-50 border-green-200 text-green-800 shadow-md',
+        error: 'bg-red-50 border-red-200 text-red-800 shadow-md',
+        warning: 'bg-yellow-50 border-yellow-200 text-yellow-800 shadow-md',
+        info: 'bg-blue-50 border-blue-200 text-blue-800 shadow-md'
     };
     
     const icons = {
-        success: '✅',
-        error: '❌',
-        warning: '⚠️',
-        info: 'ℹ️'
+        success: '<i class="fa-solid fa-circle-check text-green-600"></i>',
+        error: '<i class="fa-solid fa-circle-xmark text-red-600"></i>',
+        warning: '<i class="fa-solid fa-triangle-exclamation text-yellow-600"></i>',
+        info: '<i class="fa-solid fa-circle-info text-blue-600"></i>'
     };
     
     const div = document.createElement('div');
-    div.className = `fixed top-4 right-4 px-4 py-3 rounded-lg border ${colors[type] || colors.info} z-50 shadow-lg max-w-md`;
+    div.className = `fixed top-4 right-4 px-4 py-3 rounded-lg border ${colors[type] || colors.info} z-50 shadow-lg max-w-md transition-all duration-300`;
     div.innerHTML = `
-        <div class="flex items-center space-x-2">
-            <span class="text-xl">${icons[type] || 'ℹ️'}</span>
-            <span>${message}</span>
+        <div class="flex items-center space-x-3">
+            <span class="text-lg">${icons[type] || ''}</span>
+            <span class="font-medium text-sm">${message}</span>
         </div>
     `;
     document.body.appendChild(div);
     
     setTimeout(() => {
-        div.remove();
+        div.style.opacity = '0';
+        div.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            div.remove();
+        }, 500);
     }, 3000);
 }
 

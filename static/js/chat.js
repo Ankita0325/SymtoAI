@@ -77,20 +77,26 @@ function addMessage(text, sender) {
         formattedText = formattedText.replace(/\n/g, '<br>');
         
         const sections = [
-            { pattern: /📋\s*𝗦𝗬𝗠𝗣𝗧𝗢𝗠 𝗔𝗖𝗞𝗡𝗢𝗪𝗟𝗘𝗗𝗚𝗠𝗘𝗡𝗧/g, class: 'section-header' },
-            { pattern: /📋\s*𝗙𝗢𝗟𝗟𝗢𝗪-𝗨𝗣 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡𝗦/g, class: 'section-header' },
-            { pattern: /📊\s*𝗦𝗬𝗠𝗣𝗧𝗢𝗠 𝗦𝗨𝗠𝗠𝗔𝗥𝗬/g, class: 'section-header' },
-            { pattern: /🧬\s*𝗙𝗔𝗠𝗜𝗟𝗬 𝗛𝗜𝗦𝗧𝗢𝗥𝗬 𝗔𝗡𝗔𝗟𝗬𝗦𝗜𝗦/g, class: 'section-header' },
-            { pattern: /🏥\s*𝗣𝗢𝗦𝗦𝗜𝗕𝗟𝗘 𝗖𝗢𝗡𝗗𝗜𝗧𝗜𝗢𝗡𝗦/g, class: 'section-header' },
-            { pattern: /📊\s*𝗥𝗜𝗦𝗞 𝗔𝗦𝗦𝗘𝗦𝗦𝗠𝗘𝗡𝗧/g, class: 'section-header' },
-            { pattern: /💊\s*𝗥𝗘𝗖𝗢𝗠𝗠𝗘𝗡𝗗𝗔𝗧𝗜𝗢𝗡𝗦/g, class: 'section-header' },
-            { pattern: /🚨\s*𝗪𝗛𝗘𝗡 𝗧𝗢 𝗦𝗘𝗘𝗞 𝗛𝗘𝗟𝗣/g, class: 'section-header risk-high' },
-            { pattern: /📋\s*𝗡𝗘𝗫𝗧 𝗦𝗧𝗘𝗣𝗦/g, class: 'section-header' },
-            { pattern: /=========================================================/g, class: 'divider' }
+            { pattern: /📋\s*(𝗦𝗬𝗠𝗣𝗧𝗢𝗠\s+𝗔𝗖𝗞𝗡𝗢𝗪𝗟𝗘𝗗𝗚𝗠𝗘𝗡𝗧|SYMPTOM\s+ACKNOWLEDGEMENT|Symptom\s+Acknowledgement|COMPREHENSIVE\s+HEALTH\s+ASSESSMENT|𝗖𝗢𝗠𝗣𝗥𝗘𝗛𝗘𝗡𝗦𝗜𝗩𝗘\s+𝗛𝗘𝗔𝗟𝗧𝗛\s+𝗔𝗦𝗦𝗘𝗦𝗦𝗠𝗘𝗡𝗧)/gi, icon: '<i class="fa-solid fa-clipboard-check text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /📋\s*(𝗙𝗢𝗟𝗟𝗢𝗪-𝗨𝗣\s+𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡𝗦|FOLLOW-UP\s+QUESTIONS|Follow-up\s+Questions)/gi, icon: '<i class="fa-solid fa-circle-question text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /📊\s*(𝗦𝗬𝗠𝗣𝗧𝗢𝗠\s+𝗦𝗨𝗠𝗠𝗔𝗥𝗬|SYMPTOM\s+SUMMARY|Symptom\s+Summary)/gi, icon: '<i class="fa-solid fa-list-check text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /🧬\s*(𝗙𝗔𝗠𝗜𝗟𝗬\s+𝗛𝗜𝗦𝗧𝗢𝗥𝗬\s+𝗔𝗡𝗔𝗟𝗬𝗦𝗜𝗦|FAMILY\s+HISTORY\s+ANALYSIS|Family\s+History\s+Analysis)/gi, icon: '<i class="fa-solid fa-dna text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /🏥\s*(𝗣𝗢𝗦𝗦𝗜𝗕𝗟𝗘\s+𝗖𝗢𝗡𝗗𝗜𝗧𝗜𝗢𝗡𝗦|POSSIBLE\s+CONDITIONS|Possible\s+Conditions)/gi, icon: '<i class="fa-solid fa-stethoscope text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /📊\s*(𝗥𝗜𝗦𝗞\s+𝗔𝗦𝗦𝗘𝗦𝗦𝗠𝗘𝗡𝗧|RISK\s+ASSESSMENT|Risk\s+Assessment)/gi, icon: '<i class="fa-solid fa-chart-simple text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /💊\s*(𝗥𝗘𝗖𝗢𝗠𝗠𝗘𝗡𝗗𝗔𝗧𝗜𝗢𝗡𝗦|RECOMMENDATIONS|Recommendations)/gi, icon: '<i class="fa-solid fa-pills text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /🚨\s*(𝗪𝗛𝗘𝗡\s+𝗧𝗢\s+𝗦𝗘𝗘𝗞\s+𝗛𝗘𝗟𝗣|WHEN\s+TO\s+SEEK\s+HELP|When\s+to\s+Seek\s+Help)/gi, icon: '<i class="fa-solid fa-circle-exclamation text-red-600 mr-2"></i>', class: 'section-header risk-high' },
+            { pattern: /📋\s*(𝗡𝗘𝗫𝗧\s+𝗦𝗧𝗘𝗣𝗦|NEXT\s+STEPS|Next\s+Steps)/gi, icon: '<i class="fa-solid fa-arrow-right text-blue-600 mr-2"></i>', class: 'section-header' },
+            { pattern: /=========================================================/g, icon: '', class: 'divider' }
         ];
         
-        sections.forEach(({ pattern, class: className }) => {
-            formattedText = formattedText.replace(pattern, `<div class="${className}">$&</div>`);
+        sections.forEach(({ pattern, icon, class: className }) => {
+            if (className === 'divider') {
+                formattedText = formattedText.replace(pattern, `<div class="${className}"></div>`);
+            } else {
+                formattedText = formattedText.replace(pattern, (match, p1) => {
+                    return `<div class="${className}">${icon}${p1}</div>`;
+                });
+            }
         });
         
         formattedText = formattedText.replace(/•\s*(.*?)(<br>|$)/g, (match, content) => {
@@ -175,7 +181,7 @@ function updateSymptomInfo(symptoms, followUp) {
 
 async function analyzeRisk() {
     try {
-        addMessage('📊 Analyzing your symptoms and generating comprehensive diagnosis...', 'bot');
+        addMessage('Analyzing your symptoms and generating comprehensive diagnosis...', 'bot');
         
         const response = await fetch('/api/diagnose', {
             method: 'POST',
@@ -234,7 +240,7 @@ ${data.recommendations?.split('\n').filter(r => r.trim()).map(r => `• ${r.trim
         localStorage.setItem('lastReport', JSON.stringify(data));
         
         // Add dashboard link
-        addMessage('📊 View your full report on the <a href="/dashboard" style="color:#1a56db;text-decoration:underline;">Dashboard</a>', 'bot');
+        addMessage('<i class="fa-solid fa-chart-line text-blue-600 mr-1.5"></i> View your full report on the <a href="/dashboard" style="color:#1a56db;text-decoration:underline;">Dashboard</a>', 'bot');
         
     } catch (error) {
         console.error('Error analyzing risk:', error);
@@ -268,7 +274,7 @@ async function resetConversation() {
                 
                 const resetMsg = document.createElement('div');
                 resetMsg.className = 'text-center text-gray-500 text-sm my-4';
-                resetMsg.textContent = '🔄 Conversation has been reset';
+                resetMsg.innerHTML = '<i class="fa-solid fa-rotate-left text-gray-500 mr-1.5"></i> Conversation has been reset';
                 chatMessages.appendChild(resetMsg);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
