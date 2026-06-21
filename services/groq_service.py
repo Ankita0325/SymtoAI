@@ -8,13 +8,13 @@ class GroqService:
     def __init__(self):
         api_key = os.getenv('GROQ_API_KEY')
         if not api_key:
-            print("⚠️ WARNING: GROQ_API_KEY not found!")
+            print("[WARNING] GROQ_API_KEY not found!")
             self.client = None
             return
         
         self.client = Groq(api_key=api_key)
         self.model = "llama-3.3-70b-versatile"
-        print("✅ Groq service initialized successfully!")
+        print("[SUCCESS] Groq service initialized successfully!")
     
     def get_response(self, user_message, symptoms, family_history=None):
         """Get structured diagnostic response from Groq"""
@@ -186,7 +186,7 @@ Your tone should be professional, caring, but DIRECT about seriousness when warr
             )
             return completion.choices[0].message.content
         except Exception as e:
-            print(f"❌ Groq API error: {e}")
+            print(f"[ERROR] Groq API error: {e}")
             return self.get_mock_response(user_message, symptoms)
     
     # 🆕 NEW METHOD: get_comprehensive_diagnosis
@@ -316,7 +316,7 @@ CRITICAL RULES FOR DIAGNOSIS:
                 'risk_level': self.extract_risk_level(response_text)
             }
         except Exception as e:
-            print(f"❌ Groq API error: {e}")
+            print(f"[ERROR] Groq API error: {e}")
             return self.get_mock_diagnosis()
     
     def extract_conditions(self, text):

@@ -182,13 +182,13 @@ def generate_report_qr(report_id):
     if not session.get('logged_in'):
         return jsonify({'error': 'Unauthorized'}), 401
     
-    print(f"📱 QR Request for report: {report_id}")
+    print(f"[QR Request] Report: {report_id}")
     
     all_reports = load_json(REPORTS_FILE)
     report = all_reports.get(report_id)
     
     if not report:
-        print(f"❌ Report not found: {report_id}")
+        print(f"[ERROR] Report not found: {report_id}")
         return jsonify({'error': 'Report not found'}), 404
     
     patient_id = report.get('patient_id')
@@ -224,7 +224,7 @@ def generate_report_qr(report_id):
     img_buffer.seek(0)
     img_base64 = base64.b64encode(img_buffer.getvalue()).decode('utf-8')
     
-    print(f"✅ QR Code generated for: {report_id}")
+    print(f"[SUCCESS] QR Code generated for: {report_id}")
     
     return jsonify({
         'qr_code': img_base64,
@@ -242,7 +242,7 @@ def download_report_qr(report_id):
     if not session.get('logged_in'):
         return jsonify({'error': 'Unauthorized'}), 401
     
-    print(f"📥 Download QR for: {report_id}")
+    print(f"[Download QR] For: {report_id}")
     
     all_reports = load_json(REPORTS_FILE)
     report = all_reports.get(report_id)
@@ -287,7 +287,7 @@ def download_report_qr(report_id):
 @app.route('/report/view/<report_id>')
 def view_report(report_id):
     """View report from QR code scan"""
-    print(f"👁️ Viewing report: {report_id}")
+    print(f"[View Report] Viewing report: {report_id}")
     
     encoded_data = request.args.get('data')
     qr_data = {}
@@ -296,7 +296,7 @@ def view_report(report_id):
             qr_data_json = base64.b64decode(encoded_data).decode()
             qr_data = json.loads(qr_data_json)
         except Exception as e:
-            print(f"❌ QR decode error: {e}")
+            print(f"[ERROR] QR decode error: {e}")
     
     all_reports = load_json(REPORTS_FILE)
     report = all_reports.get(report_id)
