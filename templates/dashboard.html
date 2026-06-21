@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - SymtoAI</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         .navbar {
@@ -250,14 +251,14 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-gray-600">Risk Level</h3>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-lg font-semibold text-gray-600 flex items-center"><i class="fa-solid fa-heart-pulse text-blue-500 mr-2"></i> Risk Level</h3>
                 <div id="risk-level" class="text-3xl font-bold mt-2 text-gray-400">Loading...</div>
                 <div class="mt-2 text-sm text-gray-500">Based on your health data</div>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-gray-600">Risk Score</h3>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-lg font-semibold text-gray-600 flex items-center"><i class="fa-solid fa-gauge-high text-blue-500 mr-2"></i> Risk Score</h3>
                 <div id="risk-score" class="text-3xl font-bold mt-2">-</div>
                 <div class="risk-progress mt-2">
                     <div id="risk-progress-fill" class="risk-progress-fill" style="width: 0%"></div>
@@ -265,18 +266,16 @@
                 <div class="mt-2 text-sm text-gray-500">0-100 scale</div>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-gray-600">Recommendations</h3>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-lg font-semibold text-gray-600 flex items-center"><i class="fa-solid fa-prescription-bottle-medical text-blue-500 mr-2"></i> Recommendations</h3>
                 <div id="recommendations" class="mt-2 text-sm text-gray-600">Loading...</div>
             </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-700 mb-4 section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                    </svg>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+                    <i class="fa-solid fa-clipboard-list text-blue-600 mr-2"></i>
                     Detected Symptoms
                 </h3>
                 <div id="symptoms-list" class="flex flex-wrap gap-2">
@@ -284,11 +283,9 @@
                 </div>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-700 mb-4 section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                    </svg>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+                    <i class="fa-solid fa-people-roof text-blue-600 mr-2"></i>
                     Family History
                 </h3>
                 <div id="family-history-display">
@@ -297,11 +294,9 @@
             </div>
         </div>
 
-        <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-700 mb-4 section-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/>
-                </svg>
+        <div class="mt-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i class="fa-solid fa-file-waveform text-blue-600 mr-2"></i>
                 Comprehensive Diagnosis
             </h3>
             <div id="diagnosis-display" class="prose max-w-none">
@@ -309,11 +304,9 @@
             </div>
         </div>
 
-        <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-700 mb-4 section-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-                </svg>
+        <div class="mt-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+            <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i class="fa-solid fa-triangle-exclamation text-blue-600 mr-2"></i>
                 Risk Factors
             </h3>
             <div id="risk-factors" class="space-y-2">

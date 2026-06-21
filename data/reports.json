@@ -272,5 +272,55 @@
     ],
     "recommendations": "\ud83d\udea8 **URGENT: Immediate medical attention required**\n\ud83d\udc68\u200d\u2695\ufe0f **Recommended specialist: NEUROLOGY**\n\u26a0\ufe0f This assessment is not a medical diagnosis. Always consult a qualified healthcare professional.",
     "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n"
+  },
+  "report_20260621_210919": {
+    "patient_id": "user_20260621_210648",
+    "date": "2026-06-21T21:09:19.935348",
+    "symptoms": [
+      {
+        "timestamp": "2026-06-21T21:09:03.130441",
+        "message": "I have a high fever, idry cough, and shortness of breath.",
+        "symptoms": {
+          "fever": true,
+          "cough": true,
+          "shortness of breath": true
+        }
+      }
+    ],
+    "family_history": {
+      "mother": [
+        "hypertension"
+      ]
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I have a high fever, idry cough, and shortness of breath.",
+        "timestamp": "2026-06-21T21:09:03.036517"
+      },
+      {
+        "role": "assistant",
+        "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, shortness of breath\n\u2022 Duration: not specified days\n\n\ud83d\udea8 **\u26a0\ufe0f CRITICAL SYMPTOM DETECTED**\n\u2022 Please seek medical attention immediately\n\u2022 Do not rely on this AI assessment for diagnosis\n\u2022 This requires evaluation by a healthcare professional\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Seek immediate medical attention\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 TODAY - This requires medical evaluation\n\u2022 If you experience severe pain or difficulty breathing\n",
+        "timestamp": "2026-06-21T21:09:03.119565"
+      }
+    ],
+    "diagnosis": {
+      "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n",
+      "conditions": [
+        "Gastrointestinal issue",
+        "Infection",
+        "Inflammatory condition"
+      ],
+      "risk_level": "Moderate"
+    },
+    "risk_score": 91,
+    "risk_level": "Critical",
+    "risk_factors": [
+      "\ud83d\udea8 shortness of breath (Critical - requires immediate attention)",
+      "\u26a0\ufe0f Combined risk: fever + cough",
+      "hypertension in mother"
+    ],
+    "recommendations": "\ud83d\udea8 **URGENT: Immediate medical attention required**\n\ud83d\ude91 If chest pain is severe or radiating, call emergency services\n\ud83d\udc8a Do not drive yourself to the hospital\n\ud83d\udc68\u200d\u2695\ufe0f **Recommended specialist: PULMONOLOGY**\n\u26a0\ufe0f This assessment is not a medical diagnosis. Always consult a qualified healthcare professional.",
+    "summary": "\n=========================================================\n\ud83d\udccb \ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde3\ud835\udde5\ud835\uddd8\ud835\udddb\ud835\uddd8\ud835\udde1\ud835\udde6\ud835\udddc\ud835\udde9\ud835\uddd8 \ud835\udddb\ud835\uddd8\ud835\uddd4\ud835\udddf\ud835\udde7\ud835\udddb \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n=========================================================\n\n\ud83d\udcca \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\udde6\ud835\udde8\ud835\udde0\ud835\udde0\ud835\uddd4\ud835\udde5\ud835\uddec\n\u2022 Multiple symptoms reported\n\u2022 Duration and severity need monitoring\n\n\ud83c\udfe5 \ud835\udde3\ud835\udde2\ud835\udde6\ud835\udde6\ud835\udddc\ud835\uddd5\ud835\udddf\ud835\uddd8 \ud835\uddd6\ud835\udde2\ud835\udde1\ud835\uddd7\ud835\udddc\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Gastrointestinal issue\n2. Infection\n3. Inflammatory condition\n\n\ud83d\udcca \ud835\udde5\ud835\udddc\ud835\udde6\ud835\uddde \ud835\uddd4\ud835\udde6\ud835\udde6\ud835\uddd8\ud835\udde6\ud835\udde6\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 Risk Level: Moderate\n\u2022 Risk Score: 45/100\n\n\ud83d\udc8a \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n1. Consult a healthcare professional\n2. Monitor symptoms for 2-3 days\n3. Stay hydrated and rest\n\n\ud83d\udea8 \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen\n\u2022 If fever exceeds 103\u00b0F\n\u2022 If you experience difficulty breathing\n"
   }
 }

@@ -44,5 +44,17 @@
       "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, headache\n\u2022 Duration: 3 days\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Consider scheduling a doctor consultation\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 If symptoms worsen or persist\n\u2022 If you experience severe pain or difficulty breathing\n",
       "timestamp": "2026-06-21T20:40:25.504969"
     }
+  ],
+  "user_20260621_210648": [
+    {
+      "role": "user",
+      "content": "I have a high fever, idry cough, and shortness of breath.",
+      "timestamp": "2026-06-21T21:09:03.036517"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\ud83d\udccb \ud835\udde6\ud835\uddec\ud835\udde0\ud835\udde3\ud835\udde7\ud835\udde2\ud835\udde0 \ud835\uddd4\ud835\uddd6\ud835\uddde\ud835\udde1\ud835\udde2\ud835\uddea\ud835\udddf\ud835\uddd8\ud835\uddd7\ud835\uddda\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\udde7\n\u2022 I notice you're experiencing: fever, cough, shortness of breath\n\u2022 Duration: not specified days\n\n\ud83d\udea8 **\u26a0\ufe0f CRITICAL SYMPTOM DETECTED**\n\u2022 Please seek medical attention immediately\n\u2022 Do not rely on this AI assessment for diagnosis\n\u2022 This requires evaluation by a healthcare professional\n\n\n\ud83d\udccb \ud835\uddd9\ud835\udde2\ud835\udddf\ud835\udddf\ud835\udde2\ud835\uddea-\ud835\udde8\ud835\udde3 \ud835\udde4\ud835\udde8\ud835\uddd8\ud835\udde6\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Can you tell me more about when these symptoms started?\n\u2022 Have you taken any medication for these symptoms?\n\u2022 Do you have any other symptoms not mentioned?\n\n\ud83d\udccb \ud835\udde5\ud835\uddd8\ud835\uddd6\ud835\udde2\ud835\udde0\ud835\udde0\ud835\uddd8\ud835\udde1\ud835\uddd7\ud835\uddd4\ud835\udde7\ud835\udddc\ud835\udde2\ud835\udde1\ud835\udde6\n\u2022 Seek immediate medical attention\n\u2022 Monitor your symptoms and track any changes\n\u2022 Stay hydrated and get adequate rest\n\n\ud83d\udccb \ud835\uddea\ud835\udddb\ud835\uddd8\ud835\udde1 \ud835\udde7\ud835\udde2 \ud835\udde6\ud835\uddd8\ud835\uddd8\ud835\uddde \ud835\udddb\ud835\uddd8\ud835\udddf\ud835\udde3\n\u2022 TODAY - This requires medical evaluation\n\u2022 If you experience severe pain or difficulty breathing\n",
+      "timestamp": "2026-06-21T21:09:03.119565"
+    }
   ]
 }

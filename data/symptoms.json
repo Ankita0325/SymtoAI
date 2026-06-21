@@ -38,5 +38,16 @@
         "severity": 2.0
       }
     }
+  ],
+  "user_20260621_210648": [
+    {
+      "timestamp": "2026-06-21T21:09:03.130441",
+      "message": "I have a high fever, idry cough, and shortness of breath.",
+      "symptoms": {
+        "fever": true,
+        "cough": true,
+        "shortness of breath": true
+      }
+    }
   ]
 }
