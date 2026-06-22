@@ -5,10 +5,6 @@ SymtoAI is an AI-powered health screening and risk analysis system that helps us
 
 ---
 
-## 🔗 Repository
-`github.com/your-username/symtoai`
-
----
 
 ## 📄 Project Overview
 
@@ -101,48 +97,53 @@ Data Storage:
 
 ---
 
-## 📁 Project Structure
-├── 📁 data
-│   ├── ⚙️ conversations.json
-│   ├── ⚙️ family_history.json
-│   ├── ⚙️ patients.json
-│   ├── ⚙️ reports.json
-│   ├── ⚙️ symptoms.json
-│   └── ⚙️ users.json
-├── 📁 services
-│   ├── 🐍 groq_service.py
-│   ├── ⚙️ package-lock.json
-│   ├── 🐍 question_generator.py
-│   ├── 🐍 risk_engine.py
-│   └── 🐍 symptom_parser.py
-├── 📁 static
-│   ├── 📁 css
-│   │   └── 🎨 style.css
-│   ├── 📁 image
-│   │   └── 🖼️ logo.png
-│   └── 📁 js
-│       ├── 📄 chat.js
-│       ├── 📄 dashboard.js
-│       └── 📄 family.js
-├── 📁 templates
-│   ├── 🌐 chat.html
-│   ├── 🌐 dashboard.html
-│   ├── 🌐 family_history.html
-│   ├── 🌐 index.html
-│   ├── 🌐 login.html
-│   ├── 🌐 report_view_detailed.html
-│   ├── 🌐 reports.html
-│   └── 🌐 signup.html
-├── 📁 utils
-│   └── 🐍 helpers.py
-├── ⚙️ .gitattributes
-├── ⚙️ .gitignore
-├── 📝 README.md
-├── 🐍 app.py
-├── 📄 requirements.txt
-└── 📄 runtime.txt
+# Project Structure: SymtoAI
 
-
+├── data
+│   ├── conversations.json
+│   ├── family_history.json
+│   ├── patients.json
+│   ├── reports.json
+│   ├── symptoms.json
+│   └── users.json
+│
+├── services
+│   ├── groq_service.py
+│   ├── question_generator.py
+│   ├── risk_engine.py
+│   ├── symptom_parser.py
+│   └── package-lock.json
+│
+├── static
+│   ├── css
+│   │   └── style.css
+│   ├── image
+│   │   └── logo.png
+│   └── js
+│       ├── chat.js
+│       ├── dashboard.js
+│       └── family.js
+│
+├── templates
+│   ├── chat.html
+│   ├── dashboard.html
+│   ├── family_history.html
+│   ├── index.html
+│   ├── login.html
+│   ├── reports.html
+│   ├── report_view_detailed.html
+│   └── signup.html
+│
+├── utils
+│   └── helpers.py
+│
+├── .example.env
+├── .gitattributes
+├── .gitignore
+├── README.md
+├── app.py
+├── requirements.txt
+└── runtime.txt
 ---
 
 ## 🧠 Core Modules
