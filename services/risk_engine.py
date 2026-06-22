@@ -1,3 +1,8 @@
+# services/risk_engine.py
+import json
+from typing import Dict, Any, List, Optional
+from datetime import datetime
+
 class RiskEngine:
     def __init__(self):
         # 🆕 CRITICAL: High-risk symptoms that auto-escalate
@@ -28,6 +33,14 @@ class RiskEngine:
             
             # OTHER
             'vomiting blood': {'score': 55, 'level': 'Critical', 'specialty': 'gastroenterology'},
+            
+            # 🆕 NEUROLOGICAL - BACK PAIN (CRITICAL ADDITION)
+            'cauda equina': {'score': 80, 'level': 'Critical', 'specialty': 'neurosurgery'},
+            'numbness spreading': {'score': 65, 'level': 'Critical', 'specialty': 'neurology'},
+            'leg weakness': {'score': 60, 'level': 'High', 'specialty': 'neurology'},
+            'loss of bladder control': {'score': 80, 'level': 'Critical', 'specialty': 'neurosurgery'},
+            'loss of bowel control': {'score': 80, 'level': 'Critical', 'specialty': 'neurosurgery'},
+            'saddle anesthesia': {'score': 75, 'level': 'Critical', 'specialty': 'neurosurgery'},
         }
         
         # Regular symptom scoring
@@ -48,6 +61,20 @@ class RiskEngine:
             'skin lesion': {'score': 20, 'duration_threshold': 7, 'weight': 1.5},
             'bruising': {'score': 10, 'duration_threshold': 5, 'weight': 1.1},
             'abdominal pain': {'score': 20, 'duration_threshold': 3, 'weight': 1.4},
+            
+            # 🆕 BACK PAIN & NEUROLOGICAL SYMPTOMS (CRITICAL ADDITION)
+            'back pain': {'score': 25, 'duration_threshold': 3, 'weight': 1.5, 'is_neurological': True},
+            'lower back pain': {'score': 30, 'duration_threshold': 3, 'weight': 1.6, 'is_neurological': True},
+            'radiating pain': {'score': 30, 'duration_threshold': 2, 'weight': 1.7, 'is_neurological': True},
+            'radiating leg pain': {'score': 35, 'duration_threshold': 2, 'weight': 1.8, 'is_neurological': True},
+            'sciatica': {'score': 40, 'duration_threshold': 2, 'weight': 1.8, 'is_neurological': True},
+            'numbness': {'score': 35, 'duration_threshold': 2, 'weight': 1.7, 'is_neurological': True},
+            'tingling': {'score': 20, 'duration_threshold': 3, 'weight': 1.4, 'is_neurological': True},
+            'weakness': {'score': 40, 'duration_threshold': 2, 'weight': 1.8, 'is_neurological': True},
+            'leg weakness': {'score': 45, 'duration_threshold': 2, 'weight': 1.9, 'is_neurological': True},
+            'spreading numbness': {'score': 55, 'duration_threshold': 1, 'weight': 2.0, 'is_neurological': True},
+            'loss of bladder control': {'score': 80, 'duration_threshold': 0, 'weight': 2.5, 'is_neurological': True},
+            'loss of bowel control': {'score': 80, 'duration_threshold': 0, 'weight': 2.5, 'is_neurological': True},
         }
         
         # Symptom interactions
@@ -63,6 +90,16 @@ class RiskEngine:
             ('headache', 'vision changes'): 1.8,
             ('blood in stool', 'abdominal pain'): 1.7,
             ('blood in stool', 'weight loss'): 1.9,
+            
+            # 🆕 NEUROLOGICAL INTERACTIONS
+            ('back pain', 'radiating leg pain'): 1.8,
+            ('back pain', 'numbness'): 2.0,
+            ('back pain', 'weakness'): 2.2,
+            ('numbness', 'weakness'): 2.0,
+            ('radiating pain', 'numbness'): 1.9,
+            ('back pain', 'sciatica'): 2.0,
+            ('spreading numbness', 'weakness'): 2.5,
+            ('back pain', 'loss of bladder control'): 3.0,
         }
         
         # Family history risk rules
@@ -82,9 +119,13 @@ class RiskEngine:
             'crohn': {'score': 35, 'condition': 'crohn disease'},
             'ulcerative colitis': {'score': 35, 'condition': 'ulcerative colitis'},
             'ibd': {'score': 35, 'condition': 'inflammatory bowel disease'},
+            'osteoporosis': {'score': 20, 'condition': 'osteoporosis'},
+            'spinal stenosis': {'score': 30, 'condition': 'spinal stenosis'},
+            'herniated disc': {'score': 25, 'condition': 'herniated disc'},
         }
     
-    def calculate_risk(self, symptoms, family_history=None, duration=0, user_message=""):
+    def calculate_risk(self, symptoms: Dict[str, Any], family_history: Optional[Dict] = None, 
+                       duration: int = 0, user_message: str = "", patient_id: Optional[str] = None) -> Dict[str, Any]:
         """
         Calculate risk score based on symptoms and family history
         
@@ -96,7 +137,8 @@ class RiskEngine:
             'recommendations': str,
             'specialty': str or None,
             'critical_findings': list,
-            'urgent': bool
+            'urgent': bool,
+            'patient_id': str or None
         }
         """
         total_score = 0
@@ -105,98 +147,151 @@ class RiskEngine:
         specialty = None
         urgent = False
         
+        # Get all symptom keys
+        symptom_keys = list(symptoms.keys())
+        
         # 🆕 STEP 1: Check for critical symptoms first (auto-escalate)
         has_critical = False
         
-        # Get all symptom keys for matching
-        symptom_keys = list(symptoms.keys())
+        # Check for critical neurological symptoms
+        neurological_critical = ['numbness spreading', 'leg weakness', 'loss of bladder control', 
+                                 'loss of bowel control', 'saddle anesthesia', 'cauda equina']
         
-        # Check each symptom against critical symptoms
         for symptom_key in symptom_keys:
+            symptom_lower = symptom_key.lower()
+            
+            # Check critical symptoms
             for critical_key, data in self.CRITICAL_SYMPTOMS.items():
-                # Check if symptom matches critical symptom (partial match)
-                if critical_key in symptom_key.lower() or symptom_key.lower() in critical_key:
+                if critical_key in symptom_lower or symptom_lower in critical_key:
                     has_critical = True
-                    critical_findings.append(critical_key)
+                    if critical_key not in critical_findings:
+                        critical_findings.append(critical_key)
                     total_score += data['score']
                     risk_factors.append(f"🚨 {critical_key} (Critical - requires immediate attention)")
                     
-                    # Set specialty if not already set
                     if not specialty:
                         specialty = data['specialty']
                     urgent = True
                     break
         
-        # 🆕 STEP 2: Check for "blood" related symptoms explicitly
+        # 🆕 STEP 2: Check for neurological red flags in symptom keys
+        # Check for numbness + weakness combination
+        has_numbness = any('numb' in s.lower() for s in symptom_keys)
+        has_weakness = any('weak' in s.lower() for s in symptom_keys)
+        has_spreading = any('spread' in s.lower() for s in symptom_keys)
+        has_back_pain = any('back' in s.lower() for s in symptom_keys)
+        has_radiating = any('radiat' in s.lower() for s in symptom_keys)
+        has_leg_pain = any('leg' in s.lower() for s in symptom_keys)
+        
+        # Neurological red flag: numbness + weakness
+        if has_numbness and has_weakness:
+            total_score += 40
+            risk_factors.append("🚨 Numbness + weakness = neurological red flag")
+            urgent = True
+            if not specialty:
+                specialty = 'neurology'
+            has_critical = True
+        
+        # Neurological red flag: spreading numbness
+        if has_spreading and has_numbness:
+            total_score += 30
+            risk_factors.append("🚨 Spreading numbness - urgent neurological evaluation required")
+            urgent = True
+            if not specialty:
+                specialty = 'neurology'
+            has_critical = True
+        
+        # Sciatica/radicular pain
+        if has_back_pain and has_radiating and has_leg_pain:
+            total_score += 25
+            risk_factors.append("⚠️ Radicular pain with leg involvement - possible nerve compression")
+            if not specialty:
+                specialty = 'orthopedics/neurology'
+        
+        # 🆕 STEP 3: Check for "blood" related symptoms explicitly
         blood_symptoms = ['blood in stool', 'bloody stool', 'rectal bleeding', 'blood in urine', 'bloody urine', 'vomiting blood']
         for symptom in symptom_keys:
             if 'blood' in symptom.lower():
                 has_critical = True
                 if symptom not in critical_findings:
                     critical_findings.append(symptom)
-                    total_score += 50  # High score for any blood-related symptom
-                    risk_factors.append(f"🚨 {symptom} (Critical - requires immediate attention)")
-                    if not specialty:
-                        if 'stool' in symptom.lower():
-                            specialty = 'gastroenterology'
-                        elif 'urine' in symptom.lower():
-                            specialty = 'urology'
-                    urgent = True
+                total_score += 50
+                risk_factors.append(f"🚨 {symptom} (Critical - requires immediate attention)")
+                if not specialty:
+                    if 'stool' in symptom.lower():
+                        specialty = 'gastroenterology'
+                    elif 'urine' in symptom.lower():
+                        specialty = 'urology'
+                urgent = True
         
-        # 🆕 STEP 3: Regular symptom scoring (if no critical symptoms)
-        if not has_critical:
-            for symptom, present in symptoms.items():
-                if present and symptom in self.REGULAR_SYMPTOMS:
-                    rule = self.REGULAR_SYMPTOMS[symptom]
+        # 🆕 STEP 4: Regular symptom scoring
+        for symptom_key, symptom_value in symptoms.items():
+            if not symptom_value:
+                continue
+                
+            symptom_lower = symptom_key.lower()
+            
+            # Check if symptom matches any regular symptom
+            for regular_key, rule in self.REGULAR_SYMPTOMS.items():
+                if regular_key in symptom_lower or symptom_lower in regular_key:
                     score = rule['score']
                     
                     # Apply duration multiplier if available
                     if duration > 0 and rule.get('duration_threshold', 999):
                         if duration >= rule['duration_threshold']:
                             score *= rule['weight']
-                            risk_factors.append(f"{symptom} (persistent - {duration} days)")
+                            risk_factors.append(f"{regular_key} (persistent - {duration} days)")
                         else:
-                            risk_factors.append(symptom)
+                            risk_factors.append(regular_key)
                     else:
-                        risk_factors.append(symptom)
+                        risk_factors.append(regular_key)
                     
-                    total_score += score
+                    total_score += int(score)
+                    break
         
-        # STEP 4: Apply interaction multipliers
+        # STEP 5: Apply interaction multipliers
         for (sym1, sym2), multiplier in self.INTERACTIONS.items():
             if any(sym1 in s.lower() for s in symptom_keys) and any(sym2 in s.lower() for s in symptom_keys):
                 total_score = int(total_score * multiplier)
                 risk_factors.append(f"⚠️ Combined risk: {sym1} + {sym2}")
         
-        # STEP 5: Family history risk
+        # STEP 6: Family history risk
         if family_history:
             family_score = 0
             for relation, conditions in family_history.items():
-                for condition in conditions:
-                    condition_lower = condition.lower()
-                    for rule_key, rule in self.family_history_rules.items():
-                        if rule_key in condition_lower:
-                            family_score += rule['score']
-                            risk_factors.append(f"{rule_key} in {relation}")
-                            break
+                if isinstance(conditions, list):
+                    for condition in conditions:
+                        condition_lower = condition.lower()
+                        for rule_key, rule in self.family_history_rules.items():
+                            if rule_key in condition_lower:
+                                family_score += rule['score']
+                                risk_factors.append(f"{rule_key} in {relation}")
+                                break
             
-            # Cap family history contribution at 30
             family_score = min(family_score, 30)
             total_score += family_score
         
-        # STEP 6: Apply severity multiplier
+        # STEP 7: Apply severity multiplier
         if symptoms.get('severity', 1.0) > 1.0:
             total_score = int(total_score * symptoms['severity'])
             risk_factors.append(f"Severity level: {symptoms['severity']}x")
         
-        # STEP 7: Cap score at 100
+        # STEP 8: Cap score at 100
         total_score = min(total_score, 100)
         
-        # 🆕 STEP 8: Override: If any critical symptom, score is at least 70
+        # 🆕 STEP 9: Override: If any critical symptom, score is at least 70
         if critical_findings and total_score < 70:
             total_score = 70
         
-        # 🆕 STEP 9: If "blood" is mentioned but not detected, force score
+        # 🆕 STEP 10: If back pain with numbness, force high risk
+        if has_back_pain and has_numbness and has_weakness:
+            total_score = max(total_score, 75)
+            risk_factors.append("🚨 Back pain + numbness + weakness = HIGH RISK")
+            urgent = True
+            if not specialty:
+                specialty = 'orthopedics/neurology'
+        
+        # 🆕 STEP 11: If "blood" is mentioned but not detected
         if user_message and 'blood' in user_message.lower():
             if not has_critical:
                 has_critical = True
@@ -207,8 +302,10 @@ class RiskEngine:
                 if not specialty:
                     if 'stool' in user_message.lower() or 'bowel' in user_message.lower():
                         specialty = 'gastroenterology'
+                    elif 'urine' in user_message.lower():
+                        specialty = 'urology'
         
-        # STEP 10: Determine risk level
+        # STEP 12: Determine risk level
         if critical_findings or total_score >= 85:
             level = 'Critical'
             recommendations = self._get_critical_recommendations(critical_findings, specialty)
@@ -217,65 +314,88 @@ class RiskEngine:
             recommendations = self._get_high_risk_recommendations(critical_findings, specialty)
         elif total_score >= 45:
             level = 'Moderate'
-            recommendations = 'We recommend scheduling a doctor consultation within the next few days. Monitor your symptoms closely.'
+            recommendations = '📋 We recommend scheduling a doctor consultation within the next few days. Monitor your symptoms closely.'
         elif total_score >= 25:
             level = 'Low'
-            recommendations = 'Continue monitoring your symptoms. Consider consulting a doctor if symptoms persist or worsen.'
+            recommendations = '✅ Continue monitoring your symptoms. Consider consulting a doctor if symptoms persist or worsen.'
         else:
             level = 'Minimal'
-            recommendations = 'Your current risk appears minimal. Continue maintaining a healthy lifestyle and monitor any changes.'
+            recommendations = '✅ Your current risk appears minimal. Continue maintaining a healthy lifestyle and monitor any changes.'
         
-        # 🆕 STEP 11: Generate specialty recommendation
-        if not specialty and critical_findings:
-            if any('mole' in str(f).lower() for f in critical_findings):
-                specialty = 'dermatology'
-            elif any('blood' in str(f).lower() for f in critical_findings):
-                if 'stool' in str(f).lower() or 'bowel' in str(f).lower():
-                    specialty = 'gastroenterology'
-                elif 'urine' in str(f).lower():
-                    specialty = 'urology'
-                else:
-                    specialty = 'internal medicine'
-            elif 'chest' in str(critical_findings) or 'breath' in str(critical_findings):
-                specialty = 'cardiology/pulmonology'
-            elif 'headache' in str(critical_findings) or 'vision' in str(critical_findings):
+        # STEP 13: Generate specialty recommendation
+        if not specialty:
+            if has_back_pain and (has_numbness or has_weakness):
+                specialty = 'orthopedics/neurology'
+            elif has_back_pain:
+                specialty = 'orthopedics'
+            elif has_numbness or has_weakness:
                 specialty = 'neurology'
+            elif critical_findings:
+                if any('mole' in str(f).lower() for f in critical_findings):
+                    specialty = 'dermatology'
+                elif any('blood' in str(f).lower() for f in critical_findings):
+                    if 'stool' in str(f).lower() or 'bowel' in str(f).lower():
+                        specialty = 'gastroenterology'
+                    elif 'urine' in str(f).lower():
+                        specialty = 'urology'
+                    else:
+                        specialty = 'internal medicine'
+                elif 'chest' in str(critical_findings) or 'breath' in str(critical_findings):
+                    specialty = 'cardiology/pulmonology'
+                elif 'headache' in str(critical_findings) or 'vision' in str(critical_findings):
+                    specialty = 'neurology'
         
         return {
             'score': total_score,
             'level': level,
-            'factors': risk_factors[:10],  # Limit to top 10
+            'factors': risk_factors[:10],
             'recommendations': recommendations,
             'specialty': specialty,
             'critical_findings': critical_findings,
-            'urgent': urgent or total_score >= 70
+            'urgent': urgent or total_score >= 70,
+            'patient_id': patient_id,
+            'timestamp': datetime.now().isoformat()
         }
     
-    def _get_critical_recommendations(self, critical_findings, specialty):
+    def _get_critical_recommendations(self, critical_findings: List[str], specialty: Optional[str]) -> str:
         """Generate recommendations for critical findings"""
         recommendations = []
         
         recommendations.append("🚨 **URGENT: Immediate medical attention required**")
         
         for finding in critical_findings:
-            if 'blood' in finding.lower() and 'stool' in finding.lower():
+            finding_lower = str(finding).lower()
+            
+            if 'blood' in finding_lower and 'stool' in finding_lower:
                 recommendations.append("🩸 **Blood in stool requires immediate evaluation**")
                 recommendations.append("🏥 Visit your doctor or emergency room TODAY")
                 recommendations.append("📋 Note the color of the blood (bright red vs dark/tarry)")
                 recommendations.append("📋 Track how much blood and how often")
                 recommendations.append("🚫 Do NOT take aspirin or blood thinners unless prescribed")
-            elif 'blood' in finding.lower() and 'urine' in finding.lower():
+            elif 'blood' in finding_lower and 'urine' in finding_lower:
                 recommendations.append("🩸 **Blood in urine requires medical evaluation**")
                 recommendations.append("🏥 See a urologist or visit urgent care")
                 recommendations.append("📋 Note if you have pain with urination")
-            elif 'mole' in finding.lower():
+            elif 'mole' in finding_lower:
                 recommendations.append("📅 Schedule an appointment with a **dermatologist** within 1-2 weeks")
                 recommendations.append("📸 Take clear photos of the mole with a ruler for scale")
                 recommendations.append("❌ Do NOT try to remove or treat the mole yourself")
                 recommendations.append("📋 Track the ABCDEs: Asymmetry, Border, Color, Diameter, Evolution")
-            elif 'chest' in finding.lower() or 'breath' in finding.lower():
+            elif 'chest' in finding_lower or 'breath' in finding_lower:
                 recommendations.append("🚑 If chest pain is severe or radiating, call emergency services")
                 recommendations.append("💊 Do not drive yourself to the hospital")
+            elif 'loss of bladder control' in finding_lower or 'loss of bowel control' in finding_lower:
+                recommendations.append("🚨 **EMERGENCY: Loss of bladder/bowel control requires IMMEDIATE emergency care**")
+                recommendations.append("🚑 Call emergency services (911) or go to the ER immediately")
+                recommendations.append("⚠️ This could be cauda equina syndrome - a surgical emergency")
+            elif 'numbness spreading' in finding_lower or 'leg weakness' in finding_lower:
+                recommendations.append("⚠️ **Progressive neurological symptoms require urgent evaluation**")
+                recommendations.append("🏥 Go to the Emergency Room or see a neurologist TODAY")
+                recommendations.append("📋 Monitor for worsening symptoms")
+            elif 'back pain' in finding_lower and 'numbness' in finding_lower:
+                recommendations.append("⚠️ **Back pain with neurological symptoms requires urgent evaluation**")
+                recommendations.append("🏥 See an orthopedist or neurologist within 24-48 hours")
+                recommendations.append("🚑 Go to ER if symptoms worsen or you lose bladder/bowel control")
         
         if specialty:
             recommendations.append(f"👨‍⚕️ **Recommended specialist: {specialty.upper()}**")
@@ -284,16 +404,27 @@ class RiskEngine:
         
         return "\n".join(recommendations)
     
-    def _get_high_risk_recommendations(self, critical_findings, specialty):
+    def _get_high_risk_recommendations(self, critical_findings: List[str], specialty: Optional[str]) -> str:
         """Generate recommendations for high risk findings"""
         recommendations = []
         
         recommendations.append("⚠️ **HIGH RISK: Medical attention recommended within 24-48 hours**")
         
         for finding in critical_findings:
-            if 'blood' in finding.lower():
+            finding_lower = str(finding).lower()
+            if 'blood' in finding_lower:
                 recommendations.append("🩸 Schedule a doctor's appointment as soon as possible")
                 recommendations.append("📋 Keep a diary of your symptoms")
+            elif 'mole' in finding_lower:
+                recommendations.append("📅 See a dermatologist within 1-2 weeks")
+            elif 'back pain' in finding_lower and 'numbness' in finding_lower:
+                recommendations.append("🦴 See an orthopedist or neurologist within 24-48 hours")
+                recommendations.append("🛑 Avoid heavy lifting and bending")
+                recommendations.append("🧊 Apply cold packs to lower back for 15-20 minutes")
+                recommendations.append("💊 Take OTC pain relievers if safe (consult pharmacist)")
+            elif 'numbness' in finding_lower or 'weakness' in finding_lower:
+                recommendations.append("🧠 Neurological symptoms require prompt evaluation")
+                recommendations.append("📋 Track any changes in symptoms")
         
         if specialty:
             recommendations.append(f"👨‍⚕️ **Recommended specialist: {specialty.upper()}**")
